@@ -12,7 +12,6 @@ export async function getHotSheet(): Promise<{ main: Company[]; sbtiV2: Company[
     supabase
       .from('companies')
       .select(HOT_SHEET_COLS)
-      .not('relationship_status', 'eq', 'current_client')
       .not('pipeline_stage', 'in', '("mandated","negotiation","proposal")')
       .not('asrs_group', 'eq', 'Unclassified')
       .or('sbti_status.is.null,sbti_status.neq.Targets set')
@@ -25,7 +24,6 @@ export async function getHotSheet(): Promise<{ main: Company[]; sbtiV2: Company[
       .from('companies')
       .select(HOT_SHEET_COLS + ',sbti_target_text')
       .eq('sbti_status', 'Targets set')
-      .not('relationship_status', 'eq', 'current_client')
       .order('sbti_date_updated', { ascending: true })
       .limit(150),
   ])

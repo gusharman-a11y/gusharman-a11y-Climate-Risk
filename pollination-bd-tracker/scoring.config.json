@@ -48,7 +48,7 @@
   },
 
   "relationship": {
-    "current_client": 0,
+    "current_client": 5,
     "past_client": 5,
     "warm_contact": 3,
     "none": 1
