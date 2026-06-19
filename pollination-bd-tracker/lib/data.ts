@@ -34,8 +34,8 @@ export async function getHotSheet(): Promise<{ main: Company[]; sbtiV2: Company[
   if (sbtiRes.error) throw sbtiRes.error
 
   return {
-    main: (mainRes.data ?? []) as Company[],
-    sbtiV2: (sbtiRes.data ?? []) as Company[],
+    main: (mainRes.data ?? []) as unknown as Company[],
+    sbtiV2: (sbtiRes.data ?? []) as unknown as Company[],
   }
 }
 
