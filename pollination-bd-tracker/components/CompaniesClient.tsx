@@ -94,8 +94,8 @@ export default function CompaniesClient({ companies }: Props) {
       </div>
 
       {/* Column headers */}
-      <div className="sticky top-[105px] z-10 bg-[#f6f7fb] border-b border-[#e6e9ef] grid grid-cols-[2fr_70px_100px_80px_2.5fr_120px] px-6 py-2 gap-3">
-        {['Company', 'Score', 'ASRS Group', 'SBTi', 'Climate Target', 'Relationship'].map(h => (
+      <div className="sticky top-[105px] z-10 bg-[#f6f7fb] border-b border-[#e6e9ef] grid grid-cols-[2fr_65px_90px_2fr_2fr_110px] px-6 py-2 gap-3">
+        {['Company', 'Score', 'ASRS Group', 'SBTi Target', 'Climate Target', 'Relationship'].map(h => (
           <span key={h} className="text-[11px] font-semibold text-[#676879] uppercase tracking-wide">{h}</span>
         ))}
       </div>
@@ -104,13 +104,15 @@ export default function CompaniesClient({ companies }: Props) {
       {filtered.map((company, i) => {
         const rb = relationshipBadge(company.relationship_status)
         const gb = asrsGroupBadge(company.asrs_group)
-        const target = (company as any).target_description as string | null
+        const target = company.target_description as string | null
         const tc = company.target_classification
-        const targetYear = (company as any).target_year as number | null
-        const nztYear = (company as any).nzt_end_year as number | null
-        const scope = (company as any).target_scope as string | null
+        const targetYear = company.target_year as number | null
+        const nztYear = company.nzt_end_year as number | null
+        const scope = company.target_scope as string | null
+        const sbtiText = company.sbti_target_text as string | null
+        const nger = company.nger_scope1_tco2e
+        const ngerYear = company.nger_year
 
-        // Full target tooltip string
         const fullTarget = [target, scope ? `(${scope})` : null, targetYear ? `by ${targetYear}` : null]
           .filter(Boolean).join(' ')
 
@@ -118,35 +120,48 @@ export default function CompaniesClient({ companies }: Props) {
           <Link
             key={company.id}
             href={`/companies/${company.id}`}
-            className={`grid grid-cols-[2fr_70px_100px_80px_2.5fr_120px] px-6 py-3 gap-3 border-b border-[#e6e9ef] hover:bg-[#e8f0fd]/30 transition-colors items-center ${i % 2 === 0 ? 'bg-white' : 'bg-[#fafbff]'}`}
+            className={`grid grid-cols-[2fr_65px_90px_2fr_2fr_110px] px-6 py-3 gap-3 border-b border-[#e6e9ef] hover:bg-[#e8f0fd]/30 transition-colors items-start ${i % 2 === 0 ? 'bg-white' : 'bg-[#fafbff]'}`}
           >
             {/* Company */}
             <div className="min-w-0">
               <p className="text-sm font-semibold text-[#323338] truncate">{company.name}</p>
-              <div className="flex items-center gap-1.5 mt-0.5">
+              <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
                 {company.asx_code && (
                   <span className="text-[10px] font-mono text-[#676879] bg-[#f6f7fb] px-1.5 py-0.5 rounded">{company.asx_code}</span>
                 )}
                 {company.sector && (
                   <span className="text-[10px] text-[#676879] truncate">{company.sector}</span>
                 )}
+                {nger && (
+                  <span className="text-[10px] text-[#c47c00] bg-[#ffe5b4] px-1.5 py-0.5 rounded">
+                    NGER {nger >= 1000 ? `${(nger/1000).toFixed(0)}kt` : `${nger}t`}{ngerYear ? ` ${ngerYear}` : ''}
+                  </span>
+                )}
+                {company.safeguard_covered && (
+                  <span className="text-[10px] text-[#c0253d] bg-[#ffd3d9] px-1.5 py-0.5 rounded">Safeguard</span>
+                )}
               </div>
             </div>
 
             {/* Score */}
-            <div><ScorePill score={company.score_overall} /></div>
+            <div className="pt-0.5"><ScorePill score={company.score_overall} /></div>
 
             {/* ASRS Group */}
-            <div><Badge label={gb.label} className={gb.className} /></div>
+            <div className="pt-0.5"><Badge label={gb.label} className={gb.className} /></div>
 
-            {/* SBTi */}
-            <div><SbtiPill status={company.sbti_status} /></div>
+            {/* SBTi Target */}
+            <div className="min-w-0" title={sbtiText || company.sbti_status || '—'}>
+              <SbtiPill status={company.sbti_status} />
+              {sbtiText && (
+                <p className="text-[11px] text-[#676879] mt-1 line-clamp-2 leading-relaxed">{sbtiText}</p>
+              )}
+            </div>
 
-            {/* Climate Target — back in column, truncated with tooltip */}
+            {/* Climate Target */}
             <div className="min-w-0" title={fullTarget || tc || 'No public target'}>
               {target ? (
                 <>
-                  <p className="text-xs text-[#323338] truncate">{target}</p>
+                  <p className="text-xs text-[#323338] line-clamp-2">{target}</p>
                   <div className="flex items-center gap-2 mt-0.5 flex-wrap">
                     {tc && <span className="text-[10px] text-[#676879] bg-[#f6f7fb] border border-[#e6e9ef] px-1.5 py-0.5 rounded">{tc}</span>}
                     {scope && <span className="text-[10px] text-[#676879]">{scope}</span>}
@@ -162,7 +177,7 @@ export default function CompaniesClient({ companies }: Props) {
             </div>
 
             {/* Relationship */}
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col gap-0.5 pt-0.5">
               <Badge label={rb.label} className={rb.className} />
               {company.relationship_lead && (
                 <p className="text-[10px] text-[#676879] truncate">{company.relationship_lead}</p>
