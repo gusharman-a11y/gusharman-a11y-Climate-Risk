@@ -27,10 +27,23 @@ export default function CompaniesClient({ companies }: Props) {
   const [groupFilter, setGroupFilter] = useState('')
   const [relFilter, setRelFilter] = useState('')
   const [sbtiFilter, setSbtiFilter] = useState('')
+  const [targetFilter, setTargetFilter] = useState('')
+  const [ngerFilter, setNgerFilter] = useState('')
+  const [nameSort, setNameSort] = useState<'asc' | 'desc' | null>(null)
 
   const sectors = useMemo(() =>
     [...new Set(companies.map(c => c.sector).filter(Boolean))].sort() as string[]
   , [companies])
+
+  const hasClimateTarget = (c: Company) => {
+    const sbtiRemoved = (c.sbti_status ?? '').toLowerCase().includes('removed')
+    const hasSbti = c.sbti_status && !sbtiRemoved
+    const hasOther = !sbtiRemoved &&
+      (c.target_classification && c.target_classification !== 'No public target' && c.target_classification !== 'SBTi removed') ||
+      // real target description that isn't just a commitment deadline notice
+      (!!(c.target_description) && !sbtiRemoved)
+    return !!(hasSbti || hasOther)
+  }
 
   const filtered = useMemo(() => companies.filter(c => {
     if (search && !c.name.toLowerCase().includes(search.toLowerCase()) &&
@@ -45,8 +58,20 @@ export default function CompaniesClient({ companies }: Props) {
       if (sbtiFilter === 'committed' && (!s.includes('committed') || s.includes('removed'))) return false
       if (sbtiFilter === 'validated' && !s.includes('targets set')) return false
     }
+    if (targetFilter === 'has' && !hasClimateTarget(c)) return false
+    if (targetFilter === 'none' && hasClimateTarget(c)) return false
+    if (ngerFilter === 'yes' && !c.nger_scope1_tco2e) return false
+    if (ngerFilter === 'safeguard' && !c.safeguard_covered) return false
     return true
-  }), [companies, search, sectorFilter, groupFilter, relFilter, sbtiFilter])
+  }), [companies, search, sectorFilter, groupFilter, relFilter, sbtiFilter, targetFilter, ngerFilter])
+
+  const sorted = useMemo(() => {
+    if (!nameSort) return filtered
+    return [...filtered].sort((a, b) => {
+      const cmp = a.name.localeCompare(b.name)
+      return nameSort === 'asc' ? cmp : -cmp
+    })
+  }, [filtered, nameSort])
 
   return (
     <div>
@@ -72,16 +97,26 @@ export default function CompaniesClient({ companies }: Props) {
             <option value="Group 3">Group 3</option>
             <option value="Unclassified">Unclassified</option>
           </select>
-          <select value={sbtiFilter} onChange={e => setSbtiFilter(e.target.value)} className={SELECT}>
-            <option value="">All SBTi</option>
-            <option value="none">No SBTi</option>
-            <option value="committed">Committed</option>
-            <option value="validated">Validated</option>
-            <option value="removed">Removed</option>
+          <select value={targetFilter} onChange={e => setTargetFilter(e.target.value)} className={SELECT}>
+            <option value="">All targets</option>
+            <option value="has">Has climate target</option>
+            <option value="none">No climate target</option>
           </select>
           <select value={sectorFilter} onChange={e => setSectorFilter(e.target.value)} className={SELECT}>
             <option value="">All sectors</option>
             {sectors.map(s => <option key={s} value={s}>{s}</option>)}
+          </select>
+          <select value={sbtiFilter} onChange={e => setSbtiFilter(e.target.value)} className={SELECT}>
+            <option value="">All SBTi</option>
+            <option value="validated">SBTi validated</option>
+            <option value="committed">SBTi committed</option>
+            <option value="removed">SBTi removed</option>
+            <option value="none">No SBTi</option>
+          </select>
+          <select value={ngerFilter} onChange={e => setNgerFilter(e.target.value)} className={SELECT}>
+            <option value="">All NGER</option>
+            <option value="yes">NGER reporters</option>
+            <option value="safeguard">Safeguard covered</option>
           </select>
           <select value={relFilter} onChange={e => setRelFilter(e.target.value)} className={SELECT}>
             <option value="">All relationships</option>
@@ -95,16 +130,23 @@ export default function CompaniesClient({ companies }: Props) {
 
       {/* Column headers */}
       <div className="sticky top-[105px] z-10 bg-[#f6f7fb] border-b border-[#e6e9ef] grid grid-cols-[2fr_65px_90px_2fr_2fr_110px] px-6 py-2 gap-3">
-        {['Company', 'Score', 'ASRS Group', 'SBTi Target', 'Climate Target', 'Relationship'].map(h => (
+        <button
+          onClick={() => setNameSort(s => s === 'asc' ? 'desc' : 'asc')}
+          className="text-[11px] font-semibold text-[#676879] uppercase tracking-wide flex items-center gap-1 hover:text-[#323338] text-left"
+        >
+          Company
+          <span className="text-[10px]">{nameSort === 'asc' ? '▲' : nameSort === 'desc' ? '▼' : '⇅'}</span>
+        </button>
+        {['Score', 'ASRS Group', 'SBTi Target', 'Climate Target', 'Relationship'].map(h => (
           <span key={h} className="text-[11px] font-semibold text-[#676879] uppercase tracking-wide">{h}</span>
         ))}
       </div>
 
       {/* Rows */}
-      {filtered.map((company, i) => {
+      {sorted.map((company, i) => {
         const rb = relationshipBadge(company.relationship_status)
         const gb = asrsGroupBadge(company.asrs_group)
-        const target = company.target_description as string | null
+        const target = (company.target_description || company.sbti_target_text) as string | null
         const tc = company.target_classification
         const targetYear = company.target_year as number | null
         const nztYear = company.nzt_end_year as number | null
