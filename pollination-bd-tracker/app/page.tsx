@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Flame, Building2, Kanban, BarChart2, ArrowRight } from 'lucide-react'
 
@@ -11,70 +12,6 @@ const CARDS = [
   { href: '/market-intelligence', icon: BarChart2,  label: 'Market Intel' },
 ]
 
-function PollinationMark() {
-  return (
-    <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <defs>
-        {/* Main chrome vertical gradient */}
-        <linearGradient id="g-chrome" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%"   stopColor="#f2f2f2" />
-          <stop offset="12%"  stopColor="#c4c4c4" />
-          <stop offset="28%"  stopColor="#e0e0e0" />
-          <stop offset="45%"  stopColor="#a8a8a8" />
-          <stop offset="60%"  stopColor="#d4d4d4" />
-          <stop offset="78%"  stopColor="#b0b0b0" />
-          <stop offset="100%" stopColor="#888888" />
-        </linearGradient>
-        {/* Horizontal sheen */}
-        <linearGradient id="g-sheen" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%"   stopColor="#fff" stopOpacity="0" />
-          <stop offset="25%"  stopColor="#fff" stopOpacity="0.22" />
-          <stop offset="50%"  stopColor="#fff" stopOpacity="0.06" />
-          <stop offset="75%"  stopColor="#fff" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#000" stopOpacity="0.08" />
-        </linearGradient>
-        {/* Inner circle */}
-        <radialGradient id="g-dot" cx="38%" cy="32%" r="65%">
-          <stop offset="0%"   stopColor="#ebebeb" />
-          <stop offset="45%"  stopColor="#b8b8b8" />
-          <stop offset="100%" stopColor="#707070" />
-        </radialGradient>
-        <filter id="f-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#000" floodOpacity="0.22" />
-        </filter>
-        <filter id="f-inner">
-          <feDropShadow dx="0" dy="-2" stdDeviation="3" floodColor="#000" floodOpacity="0.15" />
-        </filter>
-      </defs>
-
-      {/* Shadow layer */}
-      <rect x="14" y="14" width="112" height="112" rx="26" ry="26"
-            fill="#b0b0b0" opacity="0.4" transform="translate(0,8)" />
-
-      {/* Main rounded square */}
-      <rect x="14" y="14" width="112" height="112" rx="26" ry="26"
-            fill="url(#g-chrome)" filter="url(#f-shadow)" />
-
-      {/* Horizontal sheen overlay */}
-      <rect x="14" y="14" width="112" height="112" rx="26" ry="26"
-            fill="url(#g-sheen)" />
-
-      {/* Top edge highlight */}
-      <rect x="14" y="14" width="112" height="3" rx="2"
-            fill="#ffffff" opacity="0.5" />
-      <rect x="14" y="14" width="3" height="112" rx="2"
-            fill="#ffffff" opacity="0.2" />
-
-      {/* Inner dot */}
-      <circle cx="70" cy="70" r="22"
-              fill="url(#g-dot)" filter="url(#f-inner)" />
-
-      {/* Dot highlight */}
-      <circle cx="63" cy="62" r="7"
-              fill="#ffffff" opacity="0.28" />
-    </svg>
-  )
-}
 
 export default function HomePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -170,10 +107,17 @@ export default function HomePage() {
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
-      {/* Pollination mark — centred, sits on top of flow */}
+      {/* Earth image — centred, sits on top of flow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-36 h-36 sm:w-48 sm:h-48 lg:w-56 lg:h-56 select-none">
-          <PollinationMark />
+        <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-72 lg:h-72 select-none drop-shadow-2xl">
+          <Image
+            src="/earth.png"
+            alt="Earth"
+            width={512}
+            height={512}
+            className="w-full h-full object-contain"
+            priority
+          />
         </div>
       </div>
 
