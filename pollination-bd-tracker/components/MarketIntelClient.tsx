@@ -140,7 +140,7 @@ export default function MarketIntelClient() {
                   wrapperStyle={{ fontSize: 10, color: '#676879', lineHeight: '18px' }}
                   formatter={(val, entry: any) => `${val} (${entry.payload.value.toFixed(1)}Mt)`}
                 />
-                <Tooltip formatter={(v: number) => `${v.toFixed(1)} Mt CO₂e`} />
+                <Tooltip formatter={(v: any) => typeof v === 'number' ? `${v.toFixed(1)} Mt CO₂e` : v} />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -153,7 +153,7 @@ export default function MarketIntelClient() {
               <BarChart data={SECTOR_RETIREMENTS} layout="vertical" barSize={14}>
                 <XAxis type="number" tick={{ fontSize: 10, fill: '#676879' }} axisLine={false} tickLine={false} unit="Mt" />
                 <YAxis type="category" dataKey="sector" tick={{ fontSize: 10, fill: '#676879' }} axisLine={false} tickLine={false} width={72} />
-                <Tooltip formatter={(v: number) => `${v.toFixed(1)} Mt CO₂e`} />
+                <Tooltip formatter={(v: any) => typeof v === 'number' ? `${v.toFixed(1)} Mt CO₂e` : v} />
                 <Bar dataKey="volume" radius={[0,3,3,0]}>
                   {SECTOR_RETIREMENTS.map((e, i) => <Cell key={i} fill={e.color} />)}
                 </Bar>
