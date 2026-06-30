@@ -12,7 +12,6 @@ const CARDS = [
   { href: '/market-intelligence', icon: BarChart2,  label: 'Market Intel' },
 ]
 
-
 export default function HomePage() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -24,7 +23,16 @@ export default function HomePage() {
 
     let W = 0, H = 0
 
-    type P = { x: number; baseY: number; speed: number; r: number; a: number; phase: number }
+    type P = {
+      x: number
+      baseY: number
+      // each particle has a drift speed (direction baked in, tide flips sign)
+      speed: number
+      r: number
+      a: number
+      phase: number
+      phaseX: number  // per-particle horizontal phase offset for wave back-and-forth
+    }
     let particles: P[] = []
 
     const init = () => {
@@ -33,15 +41,15 @@ export default function HomePage() {
       canvas.width = W
       canvas.height = H
       particles = []
-      for (let i = 0; i < 6000; i++) {
-        // Concentrate particles in the central 30% band
+      for (let i = 0; i < 5000; i++) {
         particles.push({
           x: Math.random() * W,
-          baseY: H * 0.35 + Math.random() * H * 0.30,
-          speed: 0.15 + Math.random() * 0.65,
-          r: 0.3 + Math.random() * 1.2,
-          a: 0.06 + Math.random() * 0.32,
+          baseY: H * 0.32 + Math.random() * H * 0.36,
+          speed: 0.4 + Math.random() * 1.2,
+          r: 1.2 + Math.random() * 3.2,     // bigger pixels
+          a: 0.12 + Math.random() * 0.40,
           phase: Math.random() * Math.PI * 2,
+          phaseX: Math.random() * Math.PI * 2,
         })
       }
     }
@@ -52,28 +60,37 @@ export default function HomePage() {
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H)
-      t += 0.4
+      t += 0.35
+
+      // Global tide: sin oscillates between -1 and +1 → particles flow right then left
+      const tide = Math.sin(t * 0.0018)
 
       const midY = H * 0.5
-      const band = H * 0.28  // tighter band = clearer wave shape
+      const band = H * 0.30
 
       for (const p of particles) {
-        p.x += p.speed
-        if (p.x > W + 10) { p.x = -10 }
+        // Back-and-forth: tide drives direction, phaseX gives each particle slight lag
+        const dir = Math.sin(t * 0.0018 + p.phaseX * 0.3)
+        p.x += p.speed * dir
 
-        // Higher amplitude waves so flow is visually obvious
+        // Wrap both edges
+        if (p.x > W + 60) p.x = -60
+        if (p.x < -60) p.x = W + 60
+
+        // Vertical wave — multiple frequencies for organic look
         const wave =
-          Math.sin(t * 0.007 + p.phase         + p.x * 0.008) * 50 +
-          Math.sin(t * 0.004 + p.phase * 1.6   + p.x * 0.005) * 28 +
-          Math.sin(t * 0.002 + p.phase * 0.7   + p.x * 0.002) * 14
+          Math.sin(t * 0.006 + p.phase           + p.x * 0.007) * 55 +
+          Math.sin(t * 0.003 + p.phase * 1.8     + p.x * 0.004) * 30 +
+          Math.sin(t * 0.0015 + p.phase * 0.6    + p.x * 0.002) * 15
 
         const y = p.baseY + wave
         const dist = Math.abs(y - midY) / band
         if (dist > 1) continue
 
-        // Sharp falloff — clear empty space above/below waves
-        const falloff = Math.pow(1 - dist, 1.4)
-        ctx.fillStyle = `rgba(45,45,45,${p.a * falloff})`
+        const falloff = Math.pow(1 - dist, 1.3)
+        // Slightly darker where tide is moving fast (centre of swing)
+        const speedBoost = Math.abs(tide) * 0.15
+        ctx.fillStyle = `rgba(30,30,30,${(p.a + speedBoost) * falloff})`
         ctx.beginPath()
         ctx.arc(p.x, y, p.r, 0, Math.PI * 2)
         ctx.fill()
@@ -89,43 +106,52 @@ export default function HomePage() {
   return (
     <div
       className="relative flex flex-col overflow-hidden"
-      style={{ height: 'calc(100vh - 56px)', background: '#f5f4f1' }}
+      style={{ height: 'calc(100vh - 56px)', background: '#ffffff' }}
     >
       {/* Wordmark */}
-      <div className="relative z-20 flex justify-center pt-10">
+      <div className="relative z-20 flex justify-center pt-8">
         <span
           className="text-[#1a1a1a] font-light tracking-[0.28em] uppercase select-none"
-          style={{ fontSize: 15 }}
+          style={{ fontSize: 14 }}
         >
           pollination
         </span>
       </div>
 
-      {/* Particle canvas layer */}
+      {/* Particle canvas — fills everything */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
-      {/* Earth image — centred, sits on top of flow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-72 lg:h-72 select-none drop-shadow-2xl">
+      {/* Earth — large, centred, on top of wave */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ paddingBottom: '6vh' }}>
+        <div
+          className="select-none"
+          style={{
+            width: 'clamp(260px, 42vw, 540px)',
+            height: 'clamp(260px, 42vw, 540px)',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            boxShadow: '0 24px 80px rgba(0,0,0,0.18), 0 4px 20px rgba(0,0,0,0.10)',
+          }}
+        >
           <Image
             src="/earth.png"
             alt="Earth"
-            width={512}
-            height={512}
-            className="w-full h-full object-contain"
+            width={800}
+            height={800}
+            className="w-full h-full object-cover"
             priority
           />
         </div>
       </div>
 
       {/* Bottom: headline + nav */}
-      <div className="relative z-20 mt-auto flex flex-col items-center pb-12 px-6">
+      <div className="relative z-20 mt-auto flex flex-col items-center pb-10 px-6">
         <p
-          className="text-[#111] text-center font-medium mb-8 leading-snug"
-          style={{ fontSize: 'clamp(22px, 4vw, 42px)' }}
+          className="text-[#111] text-center font-medium mb-6 leading-tight tracking-tight"
+          style={{ fontSize: 'clamp(26px, 4.5vw, 52px)' }}
         >
           Explore the Data
         </p>
@@ -135,7 +161,7 @@ export default function HomePage() {
             <Link
               key={href}
               href={href}
-              className="group flex items-center gap-2 bg-white/80 hover:bg-white border border-black/10 hover:border-black/25 text-[#222] rounded-full px-5 py-2 text-[13px] font-medium transition-all backdrop-blur-sm shadow-sm"
+              className="group flex items-center gap-2 bg-white hover:bg-[#f6f7fb] border border-black/12 hover:border-black/25 text-[#222] rounded-full px-5 py-2 text-[13px] font-medium transition-all shadow-sm"
             >
               <Icon size={13} className="text-[#10545D]" />
               {label}
