@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Flame, Building2, Kanban, BarChart2, ArrowRight } from 'lucide-react'
 
 const CARDS = [
-  { href: '/hot-sheet',           icon: Flame,     label: 'Hot Sheet' },
+  { href: '/hot-sheet',           icon: Flame,     label: 'Target Clients' },
   { href: '/companies',           icon: Building2,  label: 'Companies' },
   { href: '/pipeline',            icon: Kanban,     label: 'Pipeline' },
   { href: '/market-intelligence', icon: BarChart2,  label: 'Market Intel' },

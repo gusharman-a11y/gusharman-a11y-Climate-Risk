@@ -179,7 +179,7 @@ export default function HotSheetClient({ companies }: Props) {
       {/* Page header */}
       <div className="bg-white border-b border-[#e6e9ef] px-6 py-3 flex items-center justify-between sticky top-14 z-10">
         <div className="flex items-center gap-3">
-          <h1 className="text-base font-bold text-[#323338]">Hot Sheet</h1>
+          <h1 className="text-base font-bold text-[#323338]">Target Clients</h1>
           <span className="text-xs text-[#676879] bg-[#f6f7fb] px-2 py-0.5 rounded-full border border-[#e6e9ef]">
             {companies.length} prospects
           </span>

@@ -6,7 +6,7 @@ import { Home, Flame, Building2, Kanban, BarChart2 } from 'lucide-react'
 
 const NAV = [
   { href: '/', label: 'Home', icon: Home, exact: true },
-  { href: '/hot-sheet', label: 'Hot Sheet', icon: Flame },
+  { href: '/hot-sheet', label: 'Target Clients', icon: Flame },
   { href: '/companies', label: 'Companies', icon: Building2 },
   { href: '/pipeline', label: 'Pipeline', icon: Kanban },
   { href: '/market-intelligence', label: 'AUS Market Intelligence', icon: BarChart2 },

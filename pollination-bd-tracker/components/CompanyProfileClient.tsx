@@ -54,7 +54,7 @@ export default function CompanyProfileClient({ company: initial, signals }: Prop
       {/* Page header bar */}
       <div className="bg-white border-b border-[#e6e9ef] px-6 py-3 sticky top-14 z-10 flex items-center gap-3">
         <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-[#676879] hover:text-[#323338] transition-colors">
-          <ArrowLeft size={14} /> Hot Sheet
+          <ArrowLeft size={14} /> Target Clients
         </Link>
         <span className="text-[#c3c6d4]">/</span>
         <span className="text-sm font-semibold text-[#323338] truncate">{company.name}</span>
