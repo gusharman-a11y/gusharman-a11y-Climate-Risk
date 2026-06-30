@@ -68,6 +68,11 @@ export default function HomePage() {
       const midY = H * 0.5
       const band = H * 0.30
 
+      // Globe exclusion — matches CSS clamp(280px,46vw,580px)/2, centre offset by paddingBottom:6vh
+      const globeR = Math.min(W * 0.23, 290) + 4 // +4px soft buffer
+      const globeCX = W * 0.5
+      const globeCY = H * 0.5 - H * 0.03 // paddingBottom:6vh shifts centre up ~3% of H
+
       for (const p of particles) {
         // Back-and-forth: tide drives direction, phaseX gives each particle slight lag
         const dir = Math.sin(t * 0.0018 + p.phaseX * 0.3)
@@ -84,6 +89,11 @@ export default function HomePage() {
           Math.sin(t * 0.0015 + p.phase * 0.6    + p.x * 0.002) * 15
 
         const y = p.baseY + wave
+
+        // Skip particles inside the globe so they flow behind it
+        const dx = p.x - globeCX, dy = y - globeCY
+        if (dx * dx + dy * dy < globeR * globeR) continue
+
         const dist = Math.abs(y - midY) / band
         if (dist > 1) continue
 
@@ -124,7 +134,7 @@ export default function HomePage() {
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
-      {/* Earth — large, spinning, white bg removed via multiply blend */}
+      {/* Earth — sits above canvas; canvas skips the globe circle so particles flow behind */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ paddingBottom: '6vh' }}>
         <div
           className="select-none"
@@ -133,7 +143,6 @@ export default function HomePage() {
             height: 'clamp(280px, 46vw, 580px)',
             borderRadius: '50%',
             overflow: 'hidden',
-            mixBlendMode: 'multiply',
           }}
         >
           <Image
