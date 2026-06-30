@@ -124,16 +124,16 @@ export default function HomePage() {
         className="absolute inset-0 w-full h-full pointer-events-none"
       />
 
-      {/* Earth — large, centred, on top of wave */}
+      {/* Earth — large, spinning, white bg removed via multiply blend */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ paddingBottom: '6vh' }}>
         <div
           className="select-none"
           style={{
-            width: 'clamp(260px, 42vw, 540px)',
-            height: 'clamp(260px, 42vw, 540px)',
+            width: 'clamp(280px, 46vw, 580px)',
+            height: 'clamp(280px, 46vw, 580px)',
             borderRadius: '50%',
             overflow: 'hidden',
-            boxShadow: '0 24px 80px rgba(0,0,0,0.18), 0 4px 20px rgba(0,0,0,0.10)',
+            mixBlendMode: 'multiply',
           }}
         >
           <Image
@@ -141,7 +141,7 @@ export default function HomePage() {
             alt="Earth"
             width={800}
             height={800}
-            className="w-full h-full object-cover"
+            className="earth-spin w-full h-full object-cover"
             priority
           />
         </div>

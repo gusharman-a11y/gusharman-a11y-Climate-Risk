@@ -148,6 +148,14 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes globe-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.earth-spin {
+  animation: globe-spin 28s linear infinite;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
