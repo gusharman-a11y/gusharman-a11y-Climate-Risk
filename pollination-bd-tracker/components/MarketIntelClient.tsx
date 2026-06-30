@@ -11,6 +11,7 @@ interface Props {
   buyerCount: number
   avgIntensity: number
   sectors: { sector: string; volume: number }[]
+  methodBreakdown: { method: string; volume: number }[]
   topRetirers: SafeguardRow[]
   fetchError: string | null
 }
@@ -19,6 +20,30 @@ const SECTOR_COLORS = [
   '#10545D', '#276C75', '#499BA6', '#0D4474', '#00579B',
   '#B1DEE5', '#BCDEFF', '#DEEBF7', '#e6e9ef', '#c3c6d4',
 ]
+
+// Consistent colour per method type
+const METHOD_COLOR: Record<string, string> = {
+  'Vegetation':              '#276C75',
+  'Waste':                   '#499BA6',
+  'Savanna Fire Management': '#e86f2c',
+  'Industrial Fugitives':    '#0D4474',
+  'Facilities':              '#00579B',
+  'Energy Efficiency':       '#00c875',
+  'Agriculture':             '#8bc34a',
+  'Carbon Capture':          '#a25ddc',
+  'Transport':               '#fdab3d',
+}
+const METHOD_BG: Record<string, string> = {
+  'Vegetation':              '#E2F4F5',
+  'Waste':                   '#dff0f5',
+  'Savanna Fire Management': '#fde8d8',
+  'Industrial Fugitives':    '#dce8f5',
+  'Facilities':              '#cce5ff',
+  'Energy Efficiency':       '#d4f4e2',
+  'Agriculture':             '#eaf3d8',
+  'Carbon Capture':          '#ede0f7',
+  'Transport':               '#fff3cd',
+}
 
 function fmt(n: number) {
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M'
@@ -40,9 +65,32 @@ function CustomTooltip({ active, payload, label }: any) {
   )
 }
 
+function MethodPills({ byMethod }: { byMethod: Record<string, number> | null }) {
+  if (!byMethod) return <span className="text-[#c3c6d4] text-[10px]">—</span>
+  const sorted = Object.entries(byMethod).sort((a, b) => b[1] - a[1])
+  return (
+    <div className="flex flex-wrap gap-1">
+      {sorted.map(([method, qty]) => (
+        <span
+          key={method}
+          className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold leading-none"
+          style={{
+            background: METHOD_BG[method] ?? '#f6f7fb',
+            color: METHOD_COLOR[method] ?? '#676879',
+          }}
+          title={`${method}: ${qty.toLocaleString()} ACCUs`}
+        >
+          {method === 'Savanna Fire Management' ? 'Savanna' : method}
+          <span className="opacity-70">{fmt(qty)}</span>
+        </span>
+      ))}
+    </div>
+  )
+}
+
 export default function MarketIntelClient({
   totalACCUs, totalEmitters, buyerCount, avgIntensity,
-  sectors, topRetirers, fetchError,
+  sectors, methodBreakdown, topRetirers, fetchError,
 }: Props) {
   const STAT_CARDS = [
     {
@@ -103,46 +151,83 @@ export default function MarketIntelClient({
           ))}
         </div>
 
-        {/* Sector breakdown */}
-        <div className="bg-white rounded-xl border border-[#e6e9ef] p-6">
-          <div className="mb-5">
-            <h2 className="text-sm font-bold text-[#323338]">ACCUs Surrendered by Sector</h2>
-            <p className="text-xs text-[#676879] mt-0.5">ACCUs — Safeguard 2024-25 (CER data)</p>
+        {/* Two-column: sector + method type */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Sector breakdown */}
+          <div className="bg-white rounded-xl border border-[#e6e9ef] p-6">
+            <div className="mb-5">
+              <h2 className="text-sm font-bold text-[#323338]">ACCUs Surrendered by Sector</h2>
+              <p className="text-xs text-[#676879] mt-0.5">Safeguard 2024-25</p>
+            </div>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={sectors} layout="vertical" barSize={14} margin={{ left: 8, right: 24 }}>
+                <XAxis
+                  type="number"
+                  tick={{ fontSize: 10, fill: '#676879' }}
+                  axisLine={false}
+                  tickLine={false}
+                  tickFormatter={v => fmt(v)}
+                />
+                <YAxis
+                  type="category"
+                  dataKey="sector"
+                  tick={{ fontSize: 11, fill: '#676879' }}
+                  axisLine={false}
+                  tickLine={false}
+                  width={100}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Bar dataKey="volume" name="ACCUs" radius={[0, 3, 3, 0]}>
+                  {sectors.map((_, i) => (
+                    <Cell key={i} fill={SECTOR_COLORS[i % SECTOR_COLORS.length]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={sectors} layout="vertical" barSize={16} margin={{ left: 8, right: 24 }}>
-              <XAxis
-                type="number"
-                tick={{ fontSize: 10, fill: '#676879' }}
-                axisLine={false}
-                tickLine={false}
-                tickFormatter={v => fmt(v)}
-              />
-              <YAxis
-                type="category"
-                dataKey="sector"
-                tick={{ fontSize: 11, fill: '#676879' }}
-                axisLine={false}
-                tickLine={false}
-                width={100}
-              />
-              <Tooltip content={<CustomTooltip />} />
-              <Bar dataKey="volume" name="ACCUs" radius={[0, 3, 3, 0]}>
-                {sectors.map((_, i) => (
-                  <Cell key={i} fill={SECTOR_COLORS[i % SECTOR_COLORS.length]} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+
+          {/* Method type breakdown */}
+          <div className="bg-white rounded-xl border border-[#e6e9ef] p-6">
+            <div className="mb-5">
+              <h2 className="text-sm font-bold text-[#323338]">2024-25 Surrenders by ACCU Method</h2>
+              <p className="text-xs text-[#676879] mt-0.5">All Safeguard entities · project methodology category</p>
+            </div>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={methodBreakdown} layout="vertical" barSize={14} margin={{ left: 8, right: 24 }}>
+                <XAxis
+                  type="number"
+                  tick={{ fontSize: 10, fill: '#676879' }}
+                  axisLine={false}
+                  tickLine={false}
+                  tickFormatter={v => fmt(v)}
+                />
+                <YAxis
+                  type="category"
+                  dataKey="method"
+                  tick={{ fontSize: 11, fill: '#676879' }}
+                  axisLine={false}
+                  tickLine={false}
+                  width={130}
+                  tickFormatter={(v: string) => v === 'Savanna Fire Management' ? 'Savanna Fire' : v}
+                />
+                <Tooltip content={<CustomTooltip />} />
+                <Bar dataKey="volume" name="ACCUs" radius={[0, 3, 3, 0]}>
+                  {methodBreakdown.map(({ method }) => (
+                    <Cell key={method} fill={METHOD_COLOR[method] ?? '#c3c6d4'} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
-        {/* Top retirers table */}
+        {/* Top retirers table with method pills */}
         <div className="bg-white rounded-xl border border-[#e6e9ef] overflow-hidden">
           <div className="px-6 py-4 border-b border-[#e6e9ef] flex items-center justify-between">
             <div>
               <h2 className="text-sm font-bold text-[#323338]">Top ACCU Surrenderers</h2>
               <p className="text-xs text-[#676879] mt-0.5">
-                By ACCUs surrendered 2024-25 (Safeguard compliance)
+                By ACCUs surrendered 2024-25 · method type pills show project category mix
               </p>
             </div>
             <span className="text-[10px] bg-[#E2F4F5] text-[#10545D] font-bold px-2 py-1 rounded-full">
@@ -153,28 +238,32 @@ export default function MarketIntelClient({
             {topRetirers.map((r, i) => {
               const pct = totalACCUs > 0 ? r.accus_surrendered / topRetirers[0].accus_surrendered : 0
               return (
-                <div
-                  key={r.company_name}
-                  className="grid items-center gap-3 px-6 py-3 hover:bg-[#fafbff] transition-colors"
-                  style={{ gridTemplateColumns: '28px 2fr 1fr 120px' }}
-                >
-                  <span className="text-xs font-bold text-[#c3c6d4]">#{i + 1}</span>
-                  <span className="text-sm font-semibold text-[#323338] truncate">{r.company_name}</span>
-                  <span className="text-xs text-[#676879]">
-                    {r.safeguard_emissions
-                      ? `${(r.safeguard_emissions / 1_000_000).toFixed(1)}Mt covered`
-                      : '—'}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-1.5 rounded-full bg-[#f6f7fb]">
-                      <div
-                        className="h-full rounded-full bg-[#499BA6]"
-                        style={{ width: `${pct * 100}%` }}
-                      />
-                    </div>
-                    <span className="text-xs font-bold text-[#323338] w-14 text-right tabular-nums">
-                      {fmt(r.accus_surrendered)}
+                <div key={r.company_name} className="px-6 py-3 hover:bg-[#fafbff] transition-colors">
+                  <div
+                    className="grid items-center gap-3 mb-2"
+                    style={{ gridTemplateColumns: '28px 2fr 1fr 120px' }}
+                  >
+                    <span className="text-xs font-bold text-[#c3c6d4]">#{i + 1}</span>
+                    <span className="text-sm font-semibold text-[#323338] truncate">{r.company_name}</span>
+                    <span className="text-xs text-[#676879]">
+                      {r.safeguard_emissions
+                        ? `${(r.safeguard_emissions / 1_000_000).toFixed(1)}Mt covered`
+                        : '—'}
                     </span>
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 h-1.5 rounded-full bg-[#f6f7fb]">
+                        <div
+                          className="h-full rounded-full bg-[#499BA6]"
+                          style={{ width: `${pct * 100}%` }}
+                        />
+                      </div>
+                      <span className="text-xs font-bold text-[#323338] w-14 text-right tabular-nums">
+                        {fmt(r.accus_surrendered)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="ml-7">
+                    <MethodPills byMethod={r.surrendered_by_method} />
                   </div>
                 </div>
               )
@@ -184,8 +273,8 @@ export default function MarketIntelClient({
 
         {/* Data note */}
         <p className="text-[11px] text-[#c3c6d4] text-center pb-4">
-          Source: CER Safeguard Mechanism 2024-25 public data, processed via Pollination carbon-intel pipeline.
-          ACCU surrenders are compliance-grade (mandatory). Voluntary retirements not included.
+          Source: CER Safeguard Mechanism 2024-25 public data. Method type from ACCU methodology determination.
+          Annual trend requires prior-year CER surrender CSVs (not yet ingested).
         </p>
       </div>
     </div>

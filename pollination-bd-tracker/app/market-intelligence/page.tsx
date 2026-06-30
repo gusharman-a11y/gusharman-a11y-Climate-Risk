@@ -8,6 +8,7 @@ export interface SafeguardRow {
   company_name: string
   accus_surrendered: number
   safeguard_emissions: number
+  surrendered_by_method: Record<string, number> | null
 }
 
 function classifySector(name: string): string {
@@ -28,7 +29,7 @@ function classifySector(name: string): string {
 export default async function MarketIntelligencePage() {
   const { data, error } = await sbCarbon
     .from('prospects')
-    .select('company_name,accus_surrendered,safeguard_emissions')
+    .select('company_name,accus_surrendered,safeguard_emissions,surrendered_by_method')
     .eq('source', 'safeguard')
     .order('accus_surrendered', { ascending: false })
 
@@ -49,6 +50,17 @@ export default async function MarketIntelligencePage() {
     .map(([sector, volume]) => ({ sector, volume }))
     .sort((a, b) => b.volume - a.volume)
 
+  // Aggregate method type rollup across all buyers
+  const methodMap: Record<string, number> = {}
+  for (const r of buyers) {
+    for (const [method, qty] of Object.entries(r.surrendered_by_method ?? {})) {
+      methodMap[method] = (methodMap[method] ?? 0) + qty
+    }
+  }
+  const methodBreakdown = Object.entries(methodMap)
+    .map(([method, volume]) => ({ method, volume }))
+    .sort((a, b) => b.volume - a.volume)
+
   const top15 = buyers.slice(0, 15)
 
   return (
@@ -58,6 +70,7 @@ export default async function MarketIntelligencePage() {
       buyerCount={buyers.length}
       avgIntensity={avgIntensity}
       sectors={sectors}
+      methodBreakdown={methodBreakdown}
       topRetirers={top15}
       fetchError={error?.message ?? null}
     />
