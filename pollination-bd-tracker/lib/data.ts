@@ -1,29 +1,25 @@
 import { supabase } from './supabase'
 import type { Company, Signal } from './types'
 
-const HOT_SHEET_COLS = 'id,name,asx_code,sector,asrs_group,score_overall,score_asrs,score_target_gap,score_risk,score_intent,score_relationship,top_signal,relationship_status,relationship_lead,pipeline_stage,mandatory_from,sbti_status,sbti_date_updated'
+const HOT_SHEET_COLS = 'id,name,asx_code,sector,asrs_group,score_overall,score_asrs,score_target_gap,score_risk,score_intent,score_relationship,top_signal,relationship_status,relationship_lead,pipeline_stage,mandatory_from,sbti_status,sbti_date_updated,carbon_market_research,news_6m_summary'
 
 // ── Hot Sheet ─────────────────────────────────────────────────────────────────
 
 export async function getHotSheet(): Promise<{ main: Company[]; sbtiV2: Company[] }> {
   const [mainRes, sbtiRes] = await Promise.all([
-    // Main hot sheet — all except current clients, active pipeline, Unclassified
-    // Includes SBTi-removed and no-target companies (the core BD targets)
+    // Hot sheet — only the 10 flagged companies
     supabase
       .from('companies')
       .select(HOT_SHEET_COLS)
-      .not('pipeline_stage', 'in', '("mandated","negotiation","proposal")')
-      .not('asrs_group', 'eq', 'Unclassified')
-      .or('sbti_status.is.null,sbti_status.neq.Targets set')
-      .gt('score_overall', 0)
-      .order('score_overall', { ascending: false })
-      .limit(300),
+      .eq('hot_sheet', true)
+      .order('score_overall', { ascending: false }),
 
     // SBTi V2 refresh group — validated companies sorted oldest-validated first
     supabase
       .from('companies')
       .select(HOT_SHEET_COLS + ',sbti_target_text')
       .eq('sbti_status', 'Targets set')
+      .eq('hot_sheet', true)
       .order('sbti_date_updated', { ascending: true })
       .limit(150),
   ])

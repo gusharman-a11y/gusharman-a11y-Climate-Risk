@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { Users } from 'lucide-react'
 import type { Company, PipelineStage } from '@/lib/types'
 import { PIPELINE_STAGE_LABELS, relationshipBadge } from '@/lib/types'
 import { Badge, ScorePill } from '@/components/Badge'
@@ -96,6 +97,16 @@ export default function PipelineClient({ companies }: Props) {
                             <span className="text-[10px] text-[#676879]">{company.pipeline_owner}</span>
                           </div>
                         )}
+                        <a
+                          href={`https://www.linkedin.com/search/results/people/?keywords=${encodeURIComponent(company.name + ' sustainability director')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={e => e.stopPropagation()}
+                          className="mt-2.5 flex items-center gap-1.5 text-[11px] text-[#0073ea] hover:text-[#0060c0] font-semibold w-full border border-[#0073ea]/30 rounded px-2 py-1 hover:bg-[#e8f0fd] transition-colors justify-center"
+                        >
+                          <Users size={11} />
+                          Get contact info
+                        </a>
                       </Link>
                     )
                   })}
