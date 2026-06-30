@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Users, Linkedin, Mail, ChevronDown, ChevronRight } from 'lucide-react'
+import { Users, ExternalLink, Mail, ChevronDown, ChevronRight } from 'lucide-react'
 import type { Company, PipelineStage } from '@/lib/types'
 import { PIPELINE_STAGE_LABELS, relationshipBadge } from '@/lib/types'
 import { Badge, ScorePill } from '@/components/Badge'
@@ -47,7 +47,7 @@ function ContactRow({ role, contact }: { role: string; contact?: Contact }) {
           {contact.linkedin && (
             <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
               className="flex items-center gap-1 text-[10px] text-[#0073ea] hover:underline">
-              <Linkedin size={9} />LinkedIn
+              <ExternalLink size={9} />LinkedIn
             </a>
           )}
         </div>
