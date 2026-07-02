@@ -1,0 +1,253 @@
+[
+  {
+    "company_name": "AUSTRALIAN COMMONWEALTH GOVERNMENT LOANS",
+    "confidence": "not_found",
+    "target_year": null,
+    "net_zero_year": null,
+    "target_description": "N/A - Entity is a financing instrument/securities trust, not an operating company",
+    "target_scope": "N/A",
+    "target_classification": "Not Applicable",
+    "sbti_notes": "No SBTi commitment or validation status identified. AUSTRALIAN COMMONWEALTH GOVERNMENT LOANS (ASX:XCL) is a financing instrument/bond trust, not an operating entity. As a non-operating financial instrument, it would not have corporate-level climate targets, Scope 1/2/3 emissions, or SBTi applicability.",
+    "sources": [
+      "https://www.listcorp.com/asx/xcl/australian-commonwealth-government-loans",
+      "https://www.asx.com.au/asx/share-price-research/company/XCL",
+      "https://www.aofm.gov.au/securities"
+    ],
+    "notes": "AUSTRALIAN COMMONWEALTH GOVERNMENT LOANS (XCL) is classified as a government sector entity on ASX but marked \"Not Applic\" for sector, indicating it is a financing mechanism/trust rather than an operating company. XCL appears to be a bond or loan securities issuance vehicle. No evidence found of corporate emissions, climate targets, net-zero commitments, or SBTi participation. The entity does not fit the criteria of an operating company with measurable Scope 1, 2, or 3 emissions."
+  },
+  {
+    "company_name": "SANTOS FINANCE LIMITED",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_scope": "N/A - Financing subsidiary",
+    "target_description": "N/A - Financing subsidiary with no independent operating assets or climate targets",
+    "target_classification": "Bond-issuing financing vehicle",
+    "net_zero_year": null,
+    "sbti_notes": "SANTOS FINANCE LIMITED (ASX: SFV, GICS: Not Applicable) is a financing subsidiary of SANTOS LIMITED (ASX: STO, Energy sector). SANTOS FINANCE LIMITED has no independent climate targets as it is a pure financing vehicle. Parent company SANTOS LIMITED has quantified targets: 26-30% absolute Scope 1+2 emissions reduction by 2030 (from 2019-20 baseline); net zero Scope 1+2 operations by 2040; methane intensity <0.2% by 2025; carbon offsets via Moomba CCS. Parent targets are quantitative but not SBTi-validated. Aug 2025 Woodside-Santos merger of equals announced, adding complexity to target tracking.",
+    "sources": [
+      "https://www.santos.com/sustainability/",
+      "Local ASX 200 non-SBTI research database entry for parent (SANTOS LIMITED, STO)"
+    ],
+    "notes": "SANTOS FINANCE LIMITED (SFV) is listed on ASX with GICS classification \"Not Applicable\" \u2014 it is a debt-issuing financing subsidiary of SANTOS LIMITED. As requested, confidence is returned as \"not_found\" because the financing subsidiary has no operating-entity targets. Parent company details provided for reference in sbti_notes field."
+  },
+  {
+    "company_name": "DEXUS INDUSTRIA REIT",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_scope": "Scope 1, 2, and 3",
+    "target_description": "70% reduction in absolute Scope 1 and 2 emissions; 25% reduction in absolute Scope 3 emissions. Baseline year: 2018 (146,360 mtCO2e). Target type: absolute emissions reduction (not intensity-based). Additionally: 100% renewable electricity for managed portfolio by 2030 (RE100 commitment). Already achieved net zero on Scope 1 and 2 from 2022. Targets are Science Based Targets initiative (SBTi) aligned and 1.5\u00b0C compatible.",
+    "target_classification": "Operating company (industrial REIT managing $1.5B portfolio); externally managed by Dexus Limited (19% stake)",
+    "net_zero_year": 2050,
+    "sbti_notes": "Targets are SBTi-aligned and verified as 1.5\u00b0C compatible. Dexus (parent company managing DXI assets) was among 87 major companies recognized at UN Climate Action Summit with verified 1.5\u00b0C-aligned reduction targets. Specific SBTi validation date not found in available sources, but targets explicitly state alignment with SBTi and Paris Agreement 1.5\u00b0C pathway. Interim net zero milestone: 2040 (Scope 1 and 2).</anti_notes>\n<parameter name=\"sources\">[\"https://www.dexus.com/content/dam/dexus/documents/investing/sustainability-reports/2025/Dexus%20Climate%20Transition%20Action%20Plan.pdf\", \"https://www.dexus.com/content/dam/dexus/documents/investing/sustainability-reports/2025/2025%20Dexus%20Sustainability%20Data%20Pack.pdf\", \"https://www.dexus.com/content/dam/dexus/documents/funds/dexus-industria-reit-dxi/agm/2025/2025%20DXI%20Annual%20Report.pdf\", \"https://www.climateactive.org.au/sites/default/files/2024-07/DXI%20FY2023%20Public%20Disclosure%20Statement%20(Organisation).pdf\", \"https://tracenable.com/company/dexus/climate-targets\", \"https://sciencebasedtargets.org/news/87-major-companies-lead-the-way-towards-a-1-5-c-future-at-un-climate-action-summit\", \"https://www.dexus.com/investor-centre/unlisted-funds-management/library/articles/on-our-way-to-net-zero-by-2030\"]"
+  },
+  {
+    "company_name": "DEXUS CONVENIENCE RETAIL REIT (DXC)",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_scope": "Scope 1, 2, and 3",
+    "target_description": "70% reduction in absolute Scope 1 and 2 emissions; 25% reduction in absolute Scope 3 emissions",
+    "target_classification": "Absolute emissions reduction",
+    "net_zero_year": 2050,
+    "sbti_notes": "Dexus targets are aligned with and validated by the Science Based Targets initiative (SBTi) and designed to support the global 1.5\u00b0C warming limit goal. DXC follows the parent company Dexus's SBTi-validated targets as it is managed by Dexus Asset Management Limited. Additionally, DXC has already achieved net zero emissions across its managed assets and maintains 100% renewable electricity, having surpassed operational emissions reduction targets ahead of the 2030 deadline (achieved 2022).",
+    "sources": [
+      "https://tracenable.com/company/dexus/climate-targets",
+      "https://www.dexus.com/investing/funds/listed/dexus-convenience-retail-reit-dxc.html",
+      "https://www.dexus.com/our-impact/sustainability.html",
+      "https://ditchcarbon.com/organizations/dexus",
+      "https://www.dexus.com/content/dam/dexus/documents/investing/sustainability-reports/2025/2025%20Dexus%20Sustainability%20Data%20Pack.pdf"
+    ],
+    "notes": "DEXUS CONVENIENCE RETAIL REIT (DXC) is a listed Australian REIT managed by Dexus Asset Management Limited, a wholly-owned subsidiary of Dexus Property Group (ASX: DXS). DXC does not maintain independent climate targets but operates under the parent company's SBTi-aligned emissions reduction framework. Key targets are: (1) 70% reduction in absolute Scope 1 and 2 emissions by 2030 (from 2018 baseline of 146,360 mtCO2e); (2) 25% reduction in absolute Scope 3 emissions by 2030; (3) Net zero by 2050. DXC has achieved net zero emissions across managed assets since 2022 and uses 100% renewable electricity. The company has surpassed its 2030 targets ahead of schedule."
+  },
+  {
+    "company_name": "NATIONAL RMBS TRUST 2022-1",
+    "confidence": "not_found",
+    "target_year": null,
+    "net_zero_year": null,
+    "target_scope": "",
+    "target_description": "",
+    "target_classification": "",
+    "sbti_notes": "NATIONAL RMBS TRUST 2022-1 is a Residential Mortgage-Backed Securities (RMBS) trust listed on ASX with code NRP. It is a securitization vehicle / financing trust structure that pools residential mortgages and issues securities to investors. As a pass-through entity with no operational business, it has no Scope 1 or 2 operational emissions. While the underlying mortgages may be originated by various Australian lenders (the \"National\" designation does not confirm a specific originating bank), the trust itself is not an operating company and therefore has no corporate climate targets. Any climate commitments would exist at the originating lender level, not at the trust level. The trust's GICS classification is listed as \"Not Applic\" on the ASX, consistent with its financing-vehicle status.",
+    "sources": [
+      "https://www.asx.com.au/listings/",
+      "ASXListedCompanies.csv (May 2026 snapshot showing NRP classified as 'Not Applic')"
+    ],
+    "notes": "This is a bond trust / securitization vehicle, not an operating entity. No independent climate targets exist for this financing structure. End-investor seeking mortgage originator's climate commitments should identify underlying loan originator through trust prospectus or ASX disclosures."
+  },
+  {
+    "company_name": "NATIONAL RMBS TRUST 2024-1",
+    "confidence": "not_found",
+    "net_zero_year": null,
+    "target_year": null,
+    "target_scope": "null",
+    "target_classification": "null",
+    "target_description": "null",
+    "sbti_notes": "NATIONAL RMBS TRUST 2024-1 is a Residential Mortgage-Backed Securities securitization trust issued by National Australia Bank Limited. It is a special purpose vehicle/financing subsidiary, not an operating company with independent climate targets. Parent company National Australia Bank Limited has corporate climate targets: Net zero by 2050 across financed and facilitated emissions and operations. Interim operational target: 72% reduction in Scope 1 and 2 (market-based) emissions by 2030 from 2022 baseline, updated in 2023 to align with 1.5\u00b0C scenario. NAB has also set twelve sectoral decarbonisation targets for 2030 including thermal coal to zero, power generation financing with 80% renewables (2025), and oil/gas reductions. NAB's targets are science-based (using SBTi methodology) but not formally SBTi-validated/approved.",
+    "notes": "As an RMBS trust/securitization vehicle, NATIONAL RMBS TRUST 2024-1 has no independent operating entity climate targets. The trust pools residential mortgages and issues securities. Parent company National Australia Bank Limited's targets are the relevant corporate commitments. Confidence level set to \"not_found\" because the trust itself, as a financing vehicle/SPV, does not have standalone climate targets\u2014it is a pass-through structure.",
+    "sources": [
+      "https://www.nab.com.au/about-us/sustainability/environment/climate-change",
+      "https://www.nab.com.au/about-us/sustainability/environment/performance",
+      "https://kalkine.com.au/news/announcements/national-australia-banks-national-rmbs-trust-2024-1-releases-june-2026-monthly-investor-report",
+      "https://capital.nab.com.au/secured-funding/securitisation-reporting"
+    ]
+  },
+  {
+    "company_name": "National Storage REIT",
+    "confidence": "medium",
+    "net_zero_year": 2030,
+    "target_year": 2030,
+    "target_scope": "Scope 1 and Scope 2",
+    "target_classification": "Carbon neutrality / Net zero",
+    "target_description": "Carbon neutrality in Scope 1 and 2 emissions by 31 December 2030. The company is committed to \"reducing and offsetting\" Scope 1 and 2 emissions by 31 December 2030 through solar installations, LED upgrades, energy meters, renewable energy sourcing, and offsetting activities.",
+    "sbti_notes": "No SBTi validation found in search results. Company does not appear in the SBTi Target Dashboard based on available searches. Carbon emissions data is externally verified by the Carbon Reduction Institute.",
+    "notes": "Announced February 2024. Company developed a Scope 1 and 2 Carbon Emission Reduction Roadmap. No interim percentage reduction targets were found in public disclosures. No Scope 3 emissions targets identified. Baseline year and specific percentage reduction targets not disclosed in available sources. The company reports emissions per square metre of NLA with a 6.3% reduction reported for FY25. FY25 marks the ninth annual Sustainability Report. Scope 1 and 2 emissions were 8,574 tonnes CO2e for year ended March 2024 vs 8,363 tonnes CO2e in FY23.",
+    "sources": [
+      "https://www.marketscreener.com/quote/stock/NATIONAL-STORAGE-REIT-15295303/news/National-Storage-REIT-2024-Sustainability-Report-48115945/",
+      "https://nationalstorageinvest.com.au/sustainability/",
+      "https://www.fool.com.au/2026/02/11/national-storage-reit-grows-profit-and-portfolio-in-1h-fy26-results/"
+    ]
+  },
+  {
+    "company_name": "Transurban Finance Company Pty Ltd",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_description": "Not applicable - financing subsidiary",
+    "target_scope": "N/A",
+    "target_classification": "N/A",
+    "net_zero_year": null,
+    "sbti_notes": "Transurban Finance Company Pty Ltd is a special purpose entity (SPE) and financing subsidiary of Transurban Group, used for debt issuance and capital raising. It is not an operating entity and therefore does not have independent climate targets. Parent company Transurban Group has the following validated targets: (1) 2030 Interim Targets (SBTi-validated): 50% absolute Scope 1 and 2 GHG emissions reduction from FY19 baseline; 22% reduction in carbon intensity of purchased goods and services (Scope 3, Category 1); 55% reduction in major projects emissions intensity (Scope 3, Category 2). (2) 2050 Net Zero Target (aligned with SBTi methodology but not formally validated as of June 2024): Net-zero GHG emissions across Scope 1, 2, and 3. Transurban met its 2030 targets in 2023, seven years early. First ASX20 company to have 2030 targets validated by SBTi.</sbti_notes>\n<parameter name=\"sources\">[\"https://www.transurban.com/sustainability/reducing-emissions\", \"https://www.transurban.com/news/ghg-reduction-targets-validated\", \"https://zerotracker.net/companies/transurban-com-0062\", \"https://cbonds.com/company/45045/\", \"https://disclosure.spglobal.com/ratings/en/regulatory/org-details/sectorCode/INFRA/entityId/361317\"]"
+  },
+  {
+    "company_name": "SCENTRE GROUP TRUST 1 (SCW)",
+    "confidence": "medium",
+    "target_year": 2030,
+    "target_scope": "Scope 1 and Scope 2 only",
+    "target_description": "Net zero Scope 1 and 2 emissions across wholly-owned portfolio by 2030, with interim target of at least 50% reduction by 2025",
+    "net_zero_year": 2030,
+    "target_classification": "Quantitative net-zero only (non-validated by SBTi)",
+    "sbti_notes": "No SBTi commitment or validation identified. Scentre Group has announced net zero targets but has not submitted targets for SBTi validation. The targets are corporate climate commitments but do not carry SBTi validated status as of June 2026.",
+    "sources": [
+      "https://netzeroportal.org/profile/scentre/",
+      "https://www.scentregroup.com/news-and-media/our-stories/net-zero-18-feb-2020",
+      "https://www.scentregroup.com/sustainability/reporting-data",
+      "https://assets.ctfassets.net/0vreywxqlgab/2icBHBLfZlAnW8qTd9MhC7/47a7a9b00c78e863432a8da4fc98ea68/2023_Climate_Statement.pdf"
+    ],
+    "notes": "SCENTRE GROUP TRUST 1 (ASX: SCW) is a stapled security that is part of Scentre Group, which also includes Scentre Group Trust 2 (SGT2) and Scentre Group Trust 3 (SGT3). The operational entity is Scentre Group Limited, the parent company, which sets and discloses the group-level climate targets. Trust 1 is not a financing subsidiary or RMBS trust\u2014it is an active REIT holding the company's Australian and New Zealand retail property portfolio (Westfield centers). Progress: As of 2023/2024, Scentre Group reported 41% cumulative emissions reduction since 2014 baseline. Scope 3 emissions (financed emissions from tenant operations) are not included in the target boundary. Energy strategy relies on renewable energy procurements and efficiency improvements, supported by long-term energy agreements in NSW and Victoria."
+  },
+  {
+    "company_name": "SCENTRE GROUP TRUST 1 AND SCENTRE GROUP TRUST 2",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_scope": "Scope 1 and Scope 2",
+    "target_description": "Net zero (Scope 1 & 2) emissions across wholly-owned portfolio by 2030, with interim target of at least 50% emissions reduction by 2025",
+    "target_classification": "Net Zero Commitment",
+    "net_zero_year": 2030,
+    "sbti_notes": "No SBTi validation identified. These are self-set corporate targets not appearing on the SBTi target dashboard. Scentre Group Trust 1 and 2 are consolidated operating entities within the Scentre Group stapled security structure; targets apply to the entire Scentre Group (parent company owns and operates Westfield shopping centers). Base year for net zero commitment is 2020 (announced February 2020). Scope 3 emissions not included in targets.",
+    "sources": [
+      "https://netzeroportal.org/profile/scentre/",
+      "https://www.scentregroup.com/sustainability/our-stories/scentre-group-progresses-net-zero-emissions-pathway-and-transition-plan",
+      "https://insideretail.com.au/business/scentre-group-to-halve-emissions-in-2025-ahead-of-2030s-net-zero-target-202109",
+      "https://www.scentregroup.com/news-and-media/our-stories/net-zero-18-feb-2020"
+    ]
+  },
+  {
+    "company_name": "Nationwide Building Society",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_description": "Scope 1: 42% absolute reduction. Scope 2: 100% renewable electricity (net zero). Scope 3 Upstream: 42% reduction. Scope 3 Downstream (Mortgages): 44% emissions intensity reduction.",
+    "target_scope": "Scope 1, 2, and 3 (upstream categories 1,2,4 and downstream category 15 mortgages)",
+    "net_zero_year": 2050,
+    "sbti_notes": "Science-based targets aligned to SBTi methodologies (1.5\u00b0C or well-below 2\u00b0C pathways). Interim targets set in December 2022, published in Intermediate (by 2030) net-zero-aligned Transition Plan 2023. Base year: 2021/22. Note: Nationwide acknowledges internal modeling indicates the 44% mortgages (Scope 3 Category 15) target may not be achieved but has retained it.",
+    "sources": [
+      "https://www.nationwide.co.uk/-/assets/nationwidecouk/documents/investor-relations/intermediate-by-2030-net-zero-aligned-transition-plan-2023.pdf",
+      "https://carbonaccountingfinancials.com/files/institutions_downloads/climate-related-financial-disclosures-2025.pdf",
+      "https://www.nationwide.co.uk/-/assets/nationwidecouk/documents/about/sustainability-report-2023.pdf",
+      "https://www.nationwide.co.uk/about-us/responsible-business/reducing-our-environmental-impact",
+      "https://www.nationwide.co.uk/about-us/responsible-business/policies-and-statements/environmental-standard"
+    ],
+    "notes": "Nationwide Building Society is an operating mutual financial institution with its own climate targets (not a bond trust). Formally committed to Net-Zero Banking Alliance (NZBA) and Glasgow Financial Alliance for Net Zero (GFANZ). Additional commitment: gas-free across all business operations by 2030."
+  },
+  {
+    "company_name": "MACQUARIE TECHNOLOGY GROUP LIMITED",
+    "confidence": "not_found",
+    "target_year": null,
+    "net_zero_year": null,
+    "target_scope": "",
+    "target_classification": "",
+    "target_description": "",
+    "notes": "Macquarie Technology Group Limited (ASX: MAQ) is a separately listed public company providing telecommunications, cloud services, cybersecurity, and data centre services. Despite being a distinct entity from Macquarie Group Limited, no independently published climate targets, emissions reduction commitments, or net zero dates could be found in publicly available sources including the company's 2024 and 2025 annual reports. The company's annual reports reference Board oversight of ESG matters but do not appear to contain quantified climate targets. Macquarie Group Limited (the parent financial services company) has comprehensive climate commitments, but these are not specific to Macquarie Technology Group Limited as an operating subsidiary.",
+    "sbti_notes": "No evidence of SBTi validation or alignment found for Macquarie Technology Group Limited specifically. While Macquarie Data Centres (part of the broader Macquarie Group) references SBTi Corporate Net-Zero Standard alignment for Scope 1 and 2 emissions, no such commitment is publicly disclosed for Macquarie Technology Group Limited.",
+    "sources": [
+      "https://www.macquarietechnologygroup.com/investors/",
+      "https://www.macquarietechnologygroup.com/assets/wp-content/uploads/2025/10/2025-MAQ-Annual-Report.pdf",
+      "https://www.macquarietechnologygroup.com/assets/wp-content/uploads/2024/10/MAQ-2024-Annual-Report-to-Shareholders.pdf",
+      "https://www.macquariedatacentres.com/esg/",
+      "https://www.macquerie.com/assets/macq/about/company/sustainability/macquarie-group-fy25-sustainability-report.pdf"
+    ]
+  },
+  {
+    "company_name": "Macquarie Bank Limited (Macquarie Group Limited)",
+    "confidence": "high",
+    "target_year": 2025,
+    "net_zero_year": 2025,
+    "target_scope": "Scope 1 and Scope 2 (own operations); Scope 1, 2, and 3 (financed emissions)",
+    "target_classification": "Interim and long-term emissions reduction targets across own operations and financed emissions",
+    "target_description": "OWN OPERATIONS (Scope 1 & 2): Net zero emissions by FY2025. Achieved 98% reduction in Scopes 1 and 2 emissions since FY2020, with 100% renewable electricity for global offices and data centres. Scope 2 emissions reduced to zero since FY2022. Residual Scope 1 emissions offset with carbon removal units.\n\nFINANCED EMISSIONS TARGETS (80% of balance sheet exposure to carbon-intensive sectors):\n\n1. RESIDENTIAL MORTGAGES (FY2021 baseline):\n   - Target: 11.6-19.3 kgCO2e/m\u00b2 by 2030\n   - Reduction: 50-70% from FY2021 baseline\n   - Status: 33.2 kgCO2e/m\u00b2 in FY2024 (14% reduction from FY2021)\n\n2. OIL & GAS (FY2020 baseline):\n   - Target: 56.3-59.6 gCO2e/MJ by 2030\n   - Reduction: 9-14% from FY2020 baseline\n   - Metric: Physical emissions intensity (Scope 1, 2, 3)\n\n3. MOTOR VEHICLES (FY2020 baseline):\n   - Target: 147 gCO2e/km by 2030\n   - Reduction: 34% from FY2020 baseline\n   - Metric: Physical emissions intensity (Scope 1, 2)\n\n4. COAL SECTOR:\n   - Limited equity and lending exposures were expected to run off by 2024\n\nOVERALL FINANCED EMISSIONS COMMITMENT:\n   - Net zero alignment by 2050 for financing activities\n   - 2030 interim targets in place for high-emission sectors\n\nSCOPE 3 (OWN OPERATIONS):\n   - Measures and manages Scope 3 Categories 1-6 and 8\n   - Category 6 (business travel) emissions offset with carbon offsets by 31 December 2025",
+    "sbti_notes": "Macquarie Group has developed targets informed by the Science Based Targets initiative (SBTi) Corporate Net Zero Standard and guidance from the Net-Zero Banking Alliance. However, Macquarie does not appear to have formally validated targets registered with SBTi or listed on the SBTi Target Dashboard as of June 2026. The company's own operations net zero commitment is aligned with SBTi standards but has not been formally validated by the initiative. Notably, Macquarie exited the Net-Zero Banking Alliance in February 2025, though stated its climate commitment remains intact.</sbti_notes>\n<parameter name=\"sources\">[\"https://www.macquarie.com/assets/macq/impact/esg/policies/net-zero-climate-risk-2023.pdf\", \"https://www.macquarie.com/assets/macq/about/company/sustainability/macquarie-group-fy25-sustainability-plan-report.pdf\", \"https://www.macquarie.com/assets/macq/about/company/sustainability/macquarie-group-fy25-sustainability-report.pdf\", \"https://www.macquarie.com/assets/macq/about/company/sustainability/macquarie-group-sustainability-plan-2025.pdf\", \"https://fintech.global/2025/02/17/macquarie-parts-ways-with-net-zero-banking-alliance-in-strategic-pivot/\", \"https://www.macquarie.com/assets/macq/impact/esg/policies/net-zero-climate-risk.pdf\"]"
+  },
+  {
+    "company_name": "Qantas Airways Limited",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_description": "25% reduction in net Scope 1 and Scope 2 emissions from 2019 baseline",
+    "target_scope": "Scope 1 and Scope 2 (operational emissions only)",
+    "target_classification": "Absolute reduction (net, with offsets/carbon credits)",
+    "net_zero_year": 2050,
+    "sbti_notes": "Qantas has NOT obtained SBTi validation or registration. Research indicates Qantas set these targets independently and has not submitted them to the Science Based Targets initiative for formal validation. Climate Integrity noted that Qantas should set gross and intensity targets rather than 'net' emissions reduction targets to align with SBTi guidance.",
+    "notes": "Base year 2019 with baseline of 12,493,616 mtCO2e. Target is for \"net\" emissions reduction relying on three pillars: (1) fleet and operational improvements including 1.5% average annual fuel efficiency improvement to 2030, (2) 10% sustainable aviation fuel (SAF) in fuel mix by 2030, and (3) carbon offsets/credits. No Scope 3 emissions reduction target has been set. Qantas established a AUD$400 million Climate Fund to support investments. Additional target: ~60% SAF in fuel mix by 2050. Note: Target relies significantly on carbon offsets in third pillar; critics note this is a \"net\" rather than absolute reduction target.",
+    "sources": [
+      "https://www.qantas.com/content/dam/qantas/pdfs/about-us/environment/qantas-group-climate-action-plan.pdf",
+      "https://www.qantas.com/corporate/sustainability/our-planet/managing-climate-risk",
+      "https://tracenable.com/company/qantas-airways/climate-targets",
+      "https://climateintegrity.org.au/qantas",
+      "https://investor.qantas.com/FormBuilder/_Resource/_module/doLLG5ufYkCyEPjF1tpgyw/file/annual-reports/QAN_2025_Sustainability_Report.pdf",
+      "https://www.qantasnewsroom.com.au/media-releases/qantas-zeros-in-on-emissions-with-interim-target"
+    ]
+  },
+  {
+    "company_name": "National Australia Bank Limited",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_description": "72% reduction in Scope 1 and 2 (market-based) greenhouse gas emissions against 2022 baseline; operationally science-based target aligned with 1.5\u00b0C warming scenario. Financed emissions: 12 sectoral decarbonisation targets covering ~70% of portfolio emissions, including thermal coal to effectively zero by 2030.",
+    "target_scope": "Scope 1 (direct GHG emissions) and Scope 2 market-based method (indirect GHG emissions from purchased electricity) for operational emissions. Scope 3 financed and facilitated emissions through sectoral targets under Net Zero Banking Alliance commitment.",
+    "target_classification": "Interim near-term target (absolute % reduction for operations; sectoral decarbonisation intensity targets for financed emissions)",
+    "net_zero_year": 2050,
+    "sbti_notes": "NAB describes operational Scope 1 & 2 target as science-based aligned with 1.5\u00b0C pathway. Target subject to third-party (EY) limited assurance. Unable to confirm formal SBTi initiative validation badge through SBTi Target Dashboard. Company reports alignment with science-based methodologies but SBTi validation status not explicitly documented in accessible sources.",
+    "notes": "National Australia Bank is an operating entity (major Australian bank). Member of UN-convened Net Zero Banking Alliance. Thermal coal sectoral target: 50% reduction by 2026, effectively zero by 2030 (except residual performance guarantees for rehabilitating existing coal mines). Oil and gas exposure capped at USD 2.4 billion. Already achieved 100% renewable electricity in operations (2025). EY provided limited assurance over carbon inventory and Scope 1 & 2 progress in 2025.",
+    "sources": [
+      "https://www.nab.com.au/about-us/sustainability/environment/performance",
+      "https://www.nab.com.au/about-us/sustainability/environment/climate-change",
+      "https://www.nab.com.au/content/dam/nab/documents/reports/corporate/2024-climate-report.pdf",
+      "https://www.banktrack.org/bank/national_australia_bank_group",
+      "https://sciencebasedtargets.org/target-dashboard",
+      "https://www.nab.com.au/content/dam/nab/documents/reports/corporate/2023-climate-report.pdf"
+    ]
+  },
+  {
+    "company_name": "NATIONAL RMBS TRUST 2018-1",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_description": "N/A - Bond-issuing securitization trust without operating entity targets",
+    "target_scope": "N/A",
+    "target_classification": "N/A - Financing subsidiary structure",
+    "net_zero_year": null,
+    "sbti_notes": "This is a residential mortgage-backed securities (RMBS) securitization trust - a special purpose vehicle that pools residential mortgages. As a financing subsidiary/trust structure (not an operating company), it does not set its own emissions targets. The Climate Bonds Initiative has a DNV GL Pre-Issuance Verification Statement (December 18, 2017) indicating the trust may meet climate bond criteria, but this relates to the underlying mortgages' green characteristics, not entity-level targets. Parent entity is Perpetual Limited (trustee) and National Australia Bank (originator); neither's detailed climate targets were fully accessible in sources reviewed.</sbti_notes>\n<parameter name=\"notes\">NATIONAL RMBS TRUST 2018-1 is structured as: (1) a residential mortgage-backed securities securitization vehicle; (2) trustee: Perpetual Trustee Company Limited (ABN 42 000 001 007); (3) parent company: Perpetual Limited (ASX: PPT); (4) originator/administrator: National Australia Bank Limited; (5) listed on ASX under NRO. As a securitization SPV, it is a pass-through vehicle for mortgage pools and does not conduct independent operations requiring entity-level emissions targets. Perpetual Limited (parent of trustee) achieved Climate Active carbon neutral certification and is an IGCC member, but specific net zero target year and interim reduction percentages for Perpetual Limited were not clearly disclosed in accessible documents. For operating-company climate targets, would need to examine NAB's or Perpetual Limited's disclosures separately.",
+    "sources": [
+      "https://www.climatebonds.net/files/files/National%20RMBS%20Trust%202018-1%20-%20DNV%20GL%20Pre%20Issuance%20Verification%20Statement%2018%20Dec%202017.pdf",
+      "https://capital.nab.com.au/content/dam/nab-capital/documents/securitisation-information-memorandums/National%20RMBS%20Trust%202018-1%20(Class%20A%20through%20F).pdf",
+      "https://www.listcorp.com/asx/nro/national-rmbs-trust-2018-1-in-respect-of-series-2018-1",
+      "https://www.perpetual.com.au/",
+      "https://www.perpetual.com.au/sustainability/",
+      "https://www.climatebonds.net/our-expertise/standard-sector-criteria-certification/the-standard"
+    ]
+  }
+]

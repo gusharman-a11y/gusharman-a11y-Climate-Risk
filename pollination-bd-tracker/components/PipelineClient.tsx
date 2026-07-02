@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Users, ExternalLink, Mail, ChevronDown, ChevronRight } from 'lucide-react'
+import { Users, ExternalLink, Mail, ChevronDown, ChevronRight, Clock } from 'lucide-react'
 import type { Company, PipelineStage } from '@/lib/types'
 import { PIPELINE_STAGE_LABELS, relationshipBadge } from '@/lib/types'
 import { Badge, ScorePill } from '@/components/Badge'
@@ -10,6 +10,32 @@ import { Badge, ScorePill } from '@/components/Badge'
 interface Props { companies: Company[] }
 
 const STAGES: PipelineStage[] = ['watch', 'prospect', 'qualified', 'proposal', 'negotiation', 'mandated', 'missed']
+const ACTIVE_STAGES: PipelineStage[] = ['prospect', 'qualified', 'proposal', 'negotiation']
+
+function GoneQuietBadge({ company }: { company: Company }) {
+  const stage = company.pipeline_stage as PipelineStage | null
+  if (!stage || !ACTIVE_STAGES.includes(stage)) return null
+
+  const lastDate = company.last_interaction_date
+  if (!lastDate) {
+    return (
+      <span className="inline-flex items-center gap-1 bg-[#fff3e0] text-[#c47c00] text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
+        <Clock size={9} />
+        No contact logged
+      </span>
+    )
+  }
+
+  const daysSince = Math.floor((Date.now() - new Date(lastDate).getTime()) / 86_400_000)
+  if (daysSince < 60) return null
+
+  return (
+    <span className="inline-flex items-center gap-1 bg-[#fff3e0] text-[#c47c00] text-[10px] font-semibold px-1.5 py-0.5 rounded-full">
+      <Clock size={9} />
+      Quiet {daysSince}d
+    </span>
+  )
+}
 
 const STAGE_META: Record<PipelineStage, { color: string; bg: string; text: string }> = {
   watch:       { color: '#c3c6d4', bg: '#f6f7fb',  text: '#676879' },
@@ -80,6 +106,9 @@ function PipelineCard({ company, stageColor }: { company: Company; stageColor: s
         {company.pipeline_notes && (
           <p className="text-[11px] text-[#676879] mt-2 line-clamp-2 leading-relaxed">{company.pipeline_notes}</p>
         )}
+        <div className="mt-2">
+          <GoneQuietBadge company={company} />
+        </div>
       </Link>
 
       {/* Contact toggle */}

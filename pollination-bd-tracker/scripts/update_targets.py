@@ -150,7 +150,7 @@ def step_update_sbti():
         if company:
             patch = {}
             if status and status != 'nan': patch['sbti_status'] = status
-            if classification and classification != 'nan': patch['sbti_target_classification'] = classification
+            # sbti_target_classification is not a DB column; skip
             if date_updated and date_updated != 'nan': patch['sbti_date_updated'] = date_updated[:10]
             if target_text: patch['sbti_target_text'] = target_text[:2000]
             if patch:

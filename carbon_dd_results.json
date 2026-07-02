@@ -1,0 +1,467 @@
+{
+  "carbon": [
+    {
+      "company": "South32",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "South32 has a formal Climate Change Action Plan 2025 (CCAP 2025) approved by Board. Strategy prioritizes direct emissions reduction over offsets through structured mitigation hierarchy: avoidance, efficiency and low-carbon energy transitions, then voluntary offsets only after exhausting other options, with potential regulatory compliance use. Targets: halve Scope 1&2 emissions by FY35 (from FY21 baseline of 22.2 Mt CO2-e), net zero across all scopes by 2050. FY25: 20.7 Mt CO2-e (7% reduction from baseline, 2% increase YoY).",
+      "credit_types_used": [
+        "Potential ACCUs for Australia compliance",
+        "Potential South Africa carbon budget compliance credits"
+      ],
+      "estimated_volume_tco2": "No specific carbon offset volumes purchased documented. Operational emissions reductions: 1.5 Mt CO2-e reduction from FY21 to FY25 through direct abatement.",
+      "offset_approach": "Mitigation hierarchy prioritizing avoidance and direct abatement over offsets. Voluntary offsets only after exhausting direct reduction options. May use credits for regulatory compliance under Australia Safeguard Mechanism and South Africa carbon budget framework, but no evidence of active voluntary offset purchasing program.",
+      "key_purchases": "No documented carbon credit purchases. Primary direct abatement investments: (1) Worsley Alumina - AUD 4.4M ARENA grant for steam electrification feasibility + fuel switching coal to natural gas; (2) Hillside Aluminium - renewable energy development with Eskom (2031 target); (3) Mozal Aluminium - renewable energy to reduce coal-fired backup power use.",
+      "opportunity_notes": "South32 explicitly deprioritizes offsets in favor of direct abatement. Four operations (Hillside, Worsley, Illawarra Coal, Mozal) represent 93% of Scope 1&2 emissions. No identified CCS projects or nature-based offset strategies. Strong focus on renewable energy procurement and fuel switching rather than voluntary carbon market participation. FY25 showed 2% YoY emissions increase due to Mozal drought-driven coal power reliance, indicating vulnerability of current strategy to external factors.",
+      "sources": [
+        "https://www.south32.net/sustainability/climate-change",
+        "https://www.south32.net/docs/default-source/annual-reporting-suite/2025/climate-change-action-plan-2025.pdf",
+        "https://www.south32.net/news-media/latest-news/our-climate-change-action-plan",
+        "https://ieefa.org/resources/south32-can-expect-growing-investor-pressure-over-scope-3-emissions",
+        "https://www.accr.org.au/research/south32-climate-transition-action-plan-analysis/",
+        "https://www.marketforces.org.au/south32s-new-climate-plan-wont-include-scope-3-targets/",
+        "https://www.transitionpathwayinitiative.org/companies/south32-diversified-mining",
+        "https://arena.gov.au/news/south32-to-explore-emission-reductions-options-in-alumina-refining/",
+        "https://www.miningweekly.com/article/pathways-being-laid-to-secure-lower-carbon-electricity-supply-for-hillside-aluminium-2023-08-24",
+        "https://clubofmozambique.com/news/south32-and-eskom-collaborate-on-renewable-energy-for-hillside-aluminium-smelter/"
+      ]
+    },
+    {
+      "company": "Stockland (ASX:SGP) - Australian real estate company",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "Formal net zero strategy documented in Climate Transition Action Plan. Achieved net zero Scope 1&2 emissions in 2025 through large-scale operational decarbonization (45 MWp rooftop solar across 50+ buildings, 78 MWh battery storage, renewable electricity sourcing, building electrification). Offsets play minimal role (6.7% of residual emissions). Current focus: 50% Scope 3 emissions intensity reduction by 2030.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)"
+      ],
+      "estimated_volume_tco2": "2,400 tCO2e (H1 2026)",
+      "offset_approach": "Nature-based: 2,400 ACCUs from native forest/woodland regeneration projects in southwest Queensland (human-induced regeneration method). Credits sourced via Clean Energy Regulator (CER) / Australian National Registry for Emissions Units (ANREU). Used exclusively for hard-to-abate residual Scope 1 emissions (refrigerants, gas, fuel). Meeting Science Based Targets standards (offsets limited to &lt;10% of residual emissions).",
+      "opportunity_notes": "Stockland exclusively uses Australian domestic credits (ACCUs) with no identified international credit purchases (no VCUs, Gold Standard, RECs, or LGCs found). Project provides ecosystem restoration and farmer income diversification benefits in Queensland. Company prioritizes operational emissions reduction over offset reliance - offset strategy is supplementary. Strong preference demonstrated for Australian domestic registry through CER vs. international voluntary carbon markets. Focus now shifting to Scope 3 (value chain) emissions reduction with suppliers and tenants rather than further offset expansion.",
+      "sources": [
+        "https://www.stockland.com.au/sustainability/net-zero",
+        "https://www.stockland.com.au/media-centre/media-releases/stockland-achieves-net-zero-scope-1-and-2-emissions-with-scalable-renewable-model",
+        "https://thefifthestate.com.au/business/investment-deals/stockland-achieves-net-zero-scope-1-and-2-emissions-heres-how/",
+        "https://www.stockland.com.au/sustainability/esg-strategy",
+        "https://cer.gov.au/schemes/australian-carbon-credit-unit-scheme/australian-carbon-credit-units",
+        "https://www.stockland.com.au/globalassets/esg/fy23/stockland-climate-transition-action-plan-2023.pdf"
+      ]
+    },
+    {
+      "company": "Downer EDI Limited",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "Science-Based Targets Initiative (SBTi) aligned net zero framework targeting net zero by 2050 for Scope 1 and 2 emissions (2020 baseline) with interim 50% reduction target by 2032. Strategy prioritizes internal abatement to 90% reduction threshold, using registered certified offsets only for residual <10% hard-to-abate emissions. Approach emphasizes renewable energy infrastructure delivery and operational decarbonization over offset purchasing.",
+      "credit_types_used": [
+        "Registered certified offsets (unspecified types)"
+      ],
+      "estimated_volume_tco2": "Not disclosed. Current operational Scope 1+2 emissions: 302,151 tCO2-e (FY25). No public disclosure of carbon credit purchase or retirement volumes.",
+      "offset_approach": "Secondary approach only. Primary strategy is internal Scope 1+2 emissions reduction by 50% by 2032. Registered certified offsets used only for residual emissions after achieving 90% reduction per SBTi Corporate Net-Zero Tool framework. No specific registry or credit type specified.",
+      "key_purchases": "No specific carbon credit purchases, projects, or quantities publicly disclosed. Company focuses on renewable energy infrastructure (14 wind farms ~3GW capacity, 4 solar farms) as primary abatement strategy rather than purchasing offsets.",
+      "opportunity_notes": "Downer's approach is aligned with best practice net zero frameworks (SBTi 1.5\u00b0C pathway). However, actual offset purchasing details are not publicly disclosed in sustainability or annual reports. Company operates substantial renewable energy portfolio (2,800+ MW) which may reduce offsetting necessity. Scope 3 emissions targets still under review. Preference for ACCU vs VCU vs nature-based credits not stated.",
+      "sources": [
+        "https://www.downergroup.com/climate-change-and-decarbonisation",
+        "https://downergroup.com/sustainability/sustainability-report-2025/",
+        "https://www.listcorp.com/asx/dow/downer-edi-limited/news/fy24-sustainability-report-3077308.html",
+        "https://www.downergroup.com/renewable-energy",
+        "https://sustainability.downergroup.com/2021/environment-decarbonisation.html",
+        "https://www.downergroup.com/2022sustainabilityreport-ghgemissions",
+        "https://www.cmegroup.com/markets/energy/emissions/cbl-australian-carbon-credit-unit-accu.html",
+        "https://www.dcceew.gov.au/climate-change/emissions-reduction/accu-scheme"
+      ]
+    },
+    {
+      "company": "Inghams Group Limited (Australian poultry/food company, ASX: ING)",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "Inghams has a multi-level carbon strategy: (1) Operational emissions reduction targets of 43% by 2030 (Scope 1&2), (2) Science-Based Targets initiative (SBTi) commitment, (3) Race to Zero commitment (net zero by 2050), (4) Product-level carbon neutral certifications for Marion Bay, Waitoa, and Let's Eat brands through offsets. Mix of renewable energy sourcing (75% green electricity by 2030 target) plus offset purchases for product certification.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)",
+        "Gold Standard verified credits"
+      ],
+      "key_purchases": "Marion Bay chicken: 6,090 offsets to cover 5,536 t CO2e; Waitoa Free Range Chicken (Toitu net carbon zero, annual voluntary market purchases); Let's Eat Plant-Based (Toitu net carbon zero, annual voluntary market purchases). Renewable energy agreement with Lodestone (NZ operations, 100% renewable by 2026) reducing future offset needs.",
+      "estimated_volume_tco2": "5,536+ t CO2e (Marion Bay Climate Active certified product alone; additional volumes for Waitoa and Let's Eat products not publicly disclosed separately)",
+      "offset_approach": "Hybrid: (1) Direct reduction (LED lighting, heat recovery systems, renewable energy procurement), (2) Product-specific carbon neutral certification via offset purchases. Offsets used to achieve Climate Active carbon neutral and Toitu net carbon zero certifications for retail products, not for company-wide net zero compliance.",
+      "opportunity_notes": "Inghams' preference appears to be Australian credits (ACCU-based Australian Forests project) combined with international Gold Standard projects (India poultry litter power, Vietnam composting). Purchasing pattern shows structured approach to product certification rather than residual offset strategy. No evidence of CCS or internal abatement beyond renewable energy transition. Future offset volumes likely to decrease as renewable energy deployment expands (Lodestone agreement reducing voluntary market purchases for NZ products).",
+      "sources": [
+        "https://www.climateactive.org.au/sites/default/files/2024-12/FINAL%20SIGNED%20PDS%20(Product)%20-%20Inghams%20(1).pdf",
+        "https://inghams.com.au/marion-bays-chicken-certified-carbon-neutral-from-paddock-to-shelf/",
+        "https://marionbaychicken.com.au/carbon-neutral/",
+        "https://inghams.com.au/inghams-tackles-climate-change-with-science-based-targets/",
+        "https://tracenable.com/company/inghams-group/climate-targets",
+        "https://www.toitu.co.nz/members/inghams-enterprises-waitoa-and-lets-eat-products/",
+        "https://inghams.com.au/inghams-new-zealand-operations-to-be-powered-by-100-renewable-electricity-from-2025/",
+        "https://cer.gov.au/schemes/australian-carbon-credit-unit-scheme/accu-project-and-contract-register/project/ERF158240"
+      ]
+    },
+    {
+      "company": "Coles Group Limited",
+      "has_carbon_strategy": true,
+      "confidence": "medium",
+      "strategy_summary": "Coles has a formal carbon strategy focused on direct operational decarbonization. They explicitly do NOT rely on carbon offsets for their FY30 Scope 1+2 targets (75% reduction from FY20 baseline). Offsets are used only for Climate Active-certified product lines. Long-term net zero target: 2050. No corporate offset purchasing for operational emissions.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)"
+      ],
+      "estimated_volume_tco2": "10,506 ACCUs minimum (FY23 beef product certification); total volumes undisclosed",
+      "offset_approach": "Product certification only (Climate Active standard). Offsets used for remaining emissions in farm-to-shelf supply chain for Coles Finest Carbon Neutral beef and pork ranges. No reliance on offsets for corporate Scope 1+2 target achievement. 100% Australian credits (ACCUs) exclusively.",
+      "key_purchases": "Armoobilla Regeneration Project (Queensland); ACCUs retired for Coles Finest Certified Carbon Neutral Beef product line (7 cuts); expanded to pork range (8 cuts, though pork certification withdrawn August 2025)",
+      "opportunity_notes": "Coles is a low-volume offset buyer focused on product differentiation rather than corporate climate strategy. Offsets are means to market advantage (Climate Active logo) rather than net zero pathway. Supplier engagement target of 80% by FY29 creates potential for indirect offset demand through supply chain, but Coles avoids direct reliance. Australian-only preference and medium-premium positioning (Coles Finest range) suggest continued demand for verified local ACCUs if product portfolio expands.",
+      "sources": [
+        "https://www.coles.com.au/about/sustainability/environment/emissions",
+        "https://www.coles.com.au/about/our-partners/farming/carbon-neutral",
+        "https://www.climateactive.org.au/buy-climate-active/certified-members/coles",
+        "https://www.colesgroup.com.au/FormBuilder/_Resource/_module/ir5sKeTxxEOndzdh00hWJw/file/Sustainability_Report_2025.pdf",
+        "https://www.beefcentral.com/news/coles-launches-carbon-neutral-beef-brand/",
+        "https://www.accr.org.au/news/emissions-are-down-with-coles%E2%80%99-new-targets/"
+      ]
+    },
+    {
+      "company": "Ampol Limited",
+      "has_carbon_strategy": true,
+      "strategy_summary": "Net zero operational emissions (Scope 1 & 2) by 2040 with 2025/2030 interim targets. Emissions reduction hierarchy prioritizes avoidance, reduction, and replacement on least-cost-abatement basis, with offsets as lower priority. Voluntary Climate Active certified carbon neutral fuel program for B2B customers (60% ACCU / 40% VCU split). Mandatory ACCU compliance under Australia's Safeguard Mechanism for facilities exceeding baseline. Strong focus on internal abatement: renewable energy sourcing (50% by 2030), EV charging infrastructure, hydrogen and sustainable aviation fuel development, solar PV deployment. Minimum $100M investment through 2025 in clean energy solutions.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)",
+        "VCUs (Verified Carbon Units)",
+        "LGCs (Large-scale Generation Certificates)",
+        "Nature-based credits (Human Induced Reforestation 87.5%, Avoided Deforestation 12.5%)"
+      ],
+      "estimated_volume_tco2e": "19,124 tonnes CO2e (voluntary Climate Active program FY2023: 11,743 ACCUs + 7,381 VCUs); 47,589 ACCUs required for Safeguard Mechanism compliance 2024-25 reporting period",
+      "key_purchases": "Nine Australian carbon offset projects (native forest protection near Cobar and Brewarrina NSW); Climate Active certified carbon neutral petrol and diesel for B2B customers; ACCU purchases for Safeguard Mechanism baseline compliance",
+      "offset_approach": "Dual approach: (1) Voluntary Climate Active program offering 100% Australian or 30% Australian credit portfolios; (2) Mandatory Safeguard Mechanism ACCU purchases to meet declining baseline requirements (4.9% annual decline through 2030). Primary strategy emphasizes internal operational emissions reductions over external offsets; offsets used as interim or compliance tool only.",
+      "opportunity_notes": "Strong stated preference for Australian credits in voluntary programs but also uses international VCUs. Required ACCU compliance suggests operations significantly exceed baselines without credits. Limited public disclosure on specific offset project suppliers beyond GreenCollar due diligence partner. No CCS strategy identified. Energy transition focused on EV/hydrogen rather than carbon removal. Safeguard Mechanism baseline declining 4.9%/year creates growing compliance pressure if internal abatement targets not met.",
+      "confidence": "high",
+      "sources": [
+        "https://www.climateactive.org.au/sites/default/files/2024-05/FY2023%20Ampol%20Carbon%20Neutral%20Fuel%20Product%20PDS.pdf",
+        "https://www.climateactive.org.au/buy-climate-active/certified-members/ampol-limited",
+        "https://www.ampol.com.au/sustainability/decarbonisation",
+        "https://www.ampol.com.au/sustainability/future-energy-strategy",
+        "https://www.ampol.com.au/business/products-and-services/carbon-offset",
+        "https://assets.contentstack.io/v3/assets/blt35cb056c1c8431c3/blt932259793247a6c2/699b8cb831a5c5000890e8cb/Financial_Report.pdf",
+        "https://www.ampol.com.au/-/media/files/ampol-au/sustainability/ampol-future-energy-and-decarbonisation-strategy-final.ashx"
+      ]
+    },
+    {
+      "company": "Qantas Airways Limited",
+      "has_carbon_strategy": true,
+      "strategy_summary": "Net zero 2050 + 25% Scope 1&2 reduction by 2030 via three pillars: (1) Fleet modernization & SAF (10% by 2030, 60% by 2050); (2) Operational efficiency improvements; (3) Carbon market investments (doubling spend over 5 years). ACCU-focused with strategic preference for high-integrity Australian credits from Indigenous land management and reforestation projects. Using international credits (Verra VCS, Gold Standard) for CORSIA compliance.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)",
+        "Verra VCS (Verified Carbon Units)",
+        "Gold Standard",
+        "Climate Active Eligible Offset Units"
+      ],
+      "estimated_volume_tco2e": "243,347 tCO2e annually (FY24); cumulative ~3 million tonnes since 2007; expecting investment doubling over next 5 years suggests volume increase pending",
+      "key_purchases": "Arnhem Land Fire Abatement (ALFA NT) - Aboriginal-owned savanna burning projects delivering 64,000+ tCO2e abatement with Qantas partnership; Silva Carbon Origination Fund - A$80M founding investment for reforestation and integrated agriculture ACCUs; total ALFA project generated 4.8M+ ACCUs",
+      "offset_approach": "Compliance-driven (Safeguard Mechanism domestic, CORSIA international) + voluntary net zero ambition (2050). Offsets primary tool for hard-to-abate aviation emissions while SAF/fleet improvements scale up. Not pursuing CCS directly.",
+      "opportunity_notes": "Strong Indigenous co-benefit focus (25% of voluntary offsets target) and ACCU preference show Australian market development priority. Silva Capital partnership indicates scaling high-integrity supply strategy. However, offset volumes (243k tCO2e) represent only 1.4% of total 2024 emissions (17.6M tCO2e), and strategy faces ACCC scrutiny for potential greenwashing claims. Vulnerability: reliance on offsets growth matching emission growth targets.",
+      "confidence": "high",
+      "sources": [
+        "https://www.qantas.com/corporate/sustainability/our-planet/investing-in-carbon-markets",
+        "https://www.qantas.com/content/dam/qantas/pdfs/about-us/environment/qantas-group-climate-action-plan.pdf",
+        "https://www.climateactive.org.au/sites/default/files/2025-05/FINAL%20-%20FY24%20Climate%20Active%20-%20Public%20Disclosure%20Statement%20(PDS).pdf",
+        "https://www.carboneyes.io/blog/insights/indigenous-land-and-corporate-offsets-qantas",
+        "https://www.qantasnewsroom.com.au/media-releases/qantas-invests-in-new-nature-based-carbon-credit-fund",
+        "https://theibr.com.au/24-07-2025/19282/qantas-commits-to-higher-employment-targets-45-million-indigenous-procurement-spend-and-first-nations-carbon-offsets",
+        "https://www.qantas.com/au/en/qantas-group/sustainability/our-planet/carbon-offsetting.html",
+        "https://www.qantas.com/en-au/about-us/in-the-community/sustainability-at-qantas/voluntary-carbon-program",
+        "https://www.qantas.com/corporate/sustainability/our-planet/sustainable-aviation-fuel/saf-coalition-program"
+      ]
+    },
+    {
+      "company": "Rio Tinto",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "Net zero by 2050 with interim Scope 1&2 reduction targets of 15% by 2025 and 50% by 2030 (from 2018 baseline). Carbon offsets deliberately capped at 10% of 2018 baseline emissions (approximately 3.6 million tCO2e). Strategy prioritizes direct abatement via renewable electricity and CCS before using offsets for residual hard-to-abate emissions. CEO stated high-quality offsets play a greater role in net zero pathway. Company lacks comprehensive Scope 3 emissions strategy.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)",
+        "Nature-Based Solutions (reforestation, conservation, savanna fire management, human-induced regeneration, environmental plantings)",
+        "CCS via mineral carbonation (Carbfix partnership)",
+        "Direct air capture (CarbonCapture Inc)"
+      ],
+      "estimated_volume_tco2": "1.1 million ACCUs retired in 2024 for Safeguard Mechanism compliance; 3.5 million credits target annually by 2030; total cap at 3.6 million tCO2e for 2030 climate target (10% of 2018 baseline); nature-based credit portfolio target of 1.7 million tonnes CO2e annually by 2030",
+      "key_purchases": "Australian Integrated Carbon (14.15% equity stake; 40+ projects across 8M hectares); Silva Carbon Origination Fund (A$80M co-investment with BHP/Qantas from A$250M total fund); Meldora Platform (foundation offtaker, September 2025); Carbfix/ISAL aluminum smelter Iceland CCS hub (Coda Terminal for mineral carbonation storage); CarbonCapture Inc investment (USD $4M) for Tamarack nickel project direct air capture; Hydro partnership (USD $45M over 5 years for aluminum electrolysis carbon capture R&D)",
+      "offset_approach": "Tiered hierarchy: Priority 1 = direct emissions reductions via renewable electricity and CCS technologies. Priority 2 = offsets for residual hard-to-abate Scope 1 and 2 emissions only (deliberately capped at 10%). Strong preference for Australian ACCUs driven by Safeguard Mechanism compliance. Strategic equity investments in ACCU developers (AiCarbon, Silva Fund) to co-develop/co-finance projects for long-term credit security rather than relying on spot market purchases. Also develops nature-based solutions globally in Madagascar, Guinea, Argentina, South Africa (targeting 500,000 hectares by 2025).",
+      "opportunity_notes": "Rio Tinto's strategy demonstrates strong domestic Australian credit preference due to Safeguard Mechanism regulatory drivers. Only 1.1M of planned 3.5M by-2030 credits currently sourced, suggesting significant future purchasing pipeline. Company explicitly avoiding Gold Standard/Verra VCS in favor of Australian registry and direct co-development model. Mining industry focus on CCS and direct abatement rather than pure offset reliance differentiates from other sectors. Scope 3 emissions (578 MtCO2e, 94% from downstream processing) remain unaddressed by offset strategy, representing major gap.",
+      "sources": [
+        "https://www.riotinto.com/en/news/trending-topics/investment-in-high-integrity-accus",
+        "https://www.green.earth/news/mining-giant-rio-tinto-to-offset-its-emissions-with-3.5-million-carbon-credits",
+        "https://carboncredits.com/rio-tinto-to-use-australian-carbon-credits-to-hit-2030-emission-reduction-targets/",
+        "https://carboncredits.com/carbon-credit-rush-mining-giants-rio-tinto-and-woodside-turn-to-offsets-under-australias-climate-rules/",
+        "https://www.riotinto.com/en/sustainability/climate-change/nature-solutions",
+        "https://carboncredits.com/rio-tinto-carbon-problem-and-carbon-offset-credit-solution/",
+        "https://www.gasworld.com/rio-tinto-carbfix-in-worlds-first-carbon-mineral-storage-hub-ccs-solution/2022053.article",
+        "https://www.riotinto.com/news/releases/2021/Rio-Tinto-and-Carbfix-partner-for-carbon-capture-and-storage",
+        "https://www.accelaresearch.com/all-research/riotinto-climate-strategy-review-2025",
+        "https://carbonherald.com/rio-tinto-makes-bold-carbon-offset-pledge-aiming-3-5m-credits/",
+        "https://globalcarbonfund.com/carbon-news/bhp-rio-tinto-and-qantas-funnel-us53-million-into-a-carbon-credit-fund/"
+      ]
+    },
+    {
+      "company": "CDC Data Centres (Australia)",
+      "has_carbon_strategy": true,
+      "confidence": "medium",
+      "strategy_summary": "CDC has committed to net zero GHG emissions by 2030 for Scope 1, Scope 2, and three Scope 3 categories (waste, business travel, downstream leased assets, customer electricity). Their New Zealand operations are Toit\u016b Net Carbon Zero certified (ISO 14064-1:2018), and Australian operations are moving toward net zero by 2030. Strategy emphasizes operational efficiency (95.8% renewable energy, advanced liquid cooling, water efficiency) combined with carbon credit offsets for hard-to-abate residual emissions.",
+      "credit_types_used": [
+        "Toit\u016b-approved high-integrity carbon credits",
+        "New Zealand and international credits via Toit\u016b framework",
+        "Renewable Energy Certificates (RECs)",
+        "Permanent Forest Sink Initiative participation"
+      ],
+      "estimated_volume_tco2e": "Not publicly disclosed; historical reference: Canberra Data Centres (related entity) reported 187,568 tCO2e in FY2021-22 with 187,397 tCO2e Scope 2 emissions",
+      "offset_approach": "Toit\u016b Net Carbon Zero methodology: measured emissions reduction pathway with compensation for hard-to-abate emissions through high-integrity carbon credits from ICROA-approved providers. Prioritizes operational reductions (renewable energy, efficiency) before offsetting.",
+      "key_purchases": "Not specified in public disclosures; CDC uses Toit\u016b-approved portfolio of both New Zealand and international carbon credits; no specific named projects identified",
+      "opportunity_notes": "CDC emphasizes operational efficiency as primary decarbonization lever rather than offset-dependent strategy. Significant REC purchasing implied by 95.8% renewable energy market-based claims. New Zealand Permanent Forest Sink Initiative participation suggests nature-based credit exposure but volumes unknown. Australian strategy details less transparent than NZ operations.",
+      "sources": [
+        "https://cdc.com/sustainability/stable-planet/",
+        "https://itbrief.co.nz/story/nz-s-first-hyperscale-data-centres-now-first-net-carbon-zero",
+        "https://www.toitu.co.nz/members/cdc-data-centres-nz-limited/",
+        "https://cdc.com/media/y0nbxbdf/cdc-sustainability-report-2024.pdf",
+        "https://www.toitu.co.nz/solutions/climate-impact-certification/toitu-net-carbon-zero/"
+      ]
+    },
+    {
+      "company": "BHP (BHP Group Limited)",
+      "has_carbon_strategy": true,
+      "confidence": "high",
+      "strategy_summary": "BHP has a formal net-zero strategy with explicit carbon credit purchasing components. Primary strategy: structural abatement (electrification, renewable energy, CCS for steelmaking) combined with mandatory compliance carbon credit purchasing under Australia's Safeguard Mechanism. Does NOT intend to use voluntary offsets to meet 2030 target (30% reduction from 2020 baseline), but acknowledges need for offsets for hard-to-abate emissions and Safeguard Mechanism compliance. 2050 target: net-zero Scope 1 and 2 emissions. Investing ~USD$4B in decarbonization through 2030.",
+      "credit_types_used": [
+        "ACCUs (Australian Carbon Credit Units)",
+        "VCUs (Verified Carbon Units from REDD+ projects)",
+        "Regulatory compliance credits under Safeguard Mechanism"
+      ],
+      "estimated_volume_tco2": "2021: 300,000 tonnes CO2e retired (VCUs from REDD+ projects). 2023-24: ~$17 million spent on ACCUs for Safeguard Mechanism compliance (at $75/ACCU = ~227,000 tonnes CO2e equivalent). Total committed to Silva Carbon Origination Fund: AUD$80 million (foundation investor alongside Rio Tinto and Qantas)",
+      "offset_approach": "DUAL APPROACH: (1) MANDATORY COMPLIANCE: Purchasing ACCUs to meet Safeguard Mechanism baselines (Scope 1 emissions only). BHP surrendered $17M in ACCUs for 2023-24 (17-fold increase from prior year). (2) VOLUNTARY/STRATEGIC: Investment in Silva Carbon Origination Fund (AUD$80M committed in 2024) for large-scale, high-integrity nature-based ACCUs from land reforestation projects. Does NOT use voluntary offsets to meet 2030 targets, reserves offsets for hard-to-abate emissions and regulatory compliance.",
+      "key_purchases": "2021: 300,000 VCUs from Cordillera Azul National Park REDD+ Project (Peru) and Kasigau Corridor REDD+ Project (Kenya). 2024-present: Foundation investor in Silva Carbon Origination Fund\u2014joint venture between Roc Partners and C6 Investment Management targeting AUD$250M fund for reforestation-based ACCUs across Australian agricultural land.",
+      "opportunity_notes": "BHP applies NO vintage restrictions to ACCU purchases, viewing additionality as rigorously assessed. Strong preference for Australian credits (ACCUs via Safeguard Mechanism; Silva Capital fund focused on domestic reforestation). International VCUs used only for non-compliance purposes (2021 retirement of REDD+ credits). Mining-specific: Heavy reliance on CCUS for hard-to-abate blast furnace steelmaking emissions (partnerships with 3 major steelmakers representing ~10% global steel output). Does not disclose forward purchasing volumes for voluntary offsets post-2021. Safeguard Mechanism costs rising sharply (17-fold increase 2022-2024) due to reformed baseline requirements\u2014likely to drive higher future ACCU procurement.",
+      "sources": [
+        "https://www.bhp.com/sustainability/climate-change/carbon-offsetting",
+        "https://www.bhp.com/sustainability/climate-change",
+        "https://carbon-pulse.com/427359/",
+        "https://www.capitalbrief.com/briefing/rio-tinto-qantas-and-bhp-commit-80m-to-carbon-credits-fund-5da1ea3f-db44-4c45-8ff5-e0bf3437d26b/",
+        "https://investingnews.com/bhp-rio-qantas-carbon-credits/",
+        "https://www.riotinto.com/en/news/trending-topics/investment-in-high-integrity-accus",
+        "https://carboncredits.com/bhp-rio-tinto-and-qantas-funnel-53m-into-a-carbon-credit-fund-silva-carbon-origination-fund/",
+        "https://carbonherald.com/qantas-and-rio-tinto-partner-with-bhp-in-new-silva-carbon-origination-fund/",
+        "https://carboncredits.com/bhp-to-spend-4b-to-decarbonize-by-2030-carbon-emissions-spikes-up-near-term/",
+        "https://www.sec.gov/Archives/edgar/data/0000811809/000119312521272106/d201084d6k.htm",
+        "https://redd-monitor.org/2022/06/24/statement-from-kichwa-indigenous-communities-about-the-cordillera-azul-national-park-redd-pncaz-project-no-to-the-false-climate-solutions-offered-as-nature-based-solutions-and-carbon-neutra/",
+        "https://www.wildlifeworks.com/product-page/kasigau-corridor-redd-project-carbon-credits",
+        "https://cer.gov.au/schemes/safeguard-mechanism",
+        "https://www.qcintel.com/carbon/article/bhp-reports-17-fold-rise-in-accu-costs-46990.html",
+        "https://www.bhp.com/sustainability/climate-change/climate-transition-action-plan"
+      ]
+    }
+  ],
+  "news": [
+    {
+      "company": "South32 Limited",
+      "news_items": [
+        {
+          "date": "March 15, 2026",
+          "headline": "South32 Mozal Aluminium placed on care and maintenance due to energy crisis",
+          "summary": "South32 placed its Mozal Aluminium smelter on care and maintenance due to drought-induced electricity shortages in Mozambique, with implications for emissions reduction targets as the facility was a major driver of operational emissions.",
+          "relevance": "climate_target"
+        },
+        {
+          "date": "May 12, 2026",
+          "headline": "South32 releases Strategy and Business Update emphasizing energy transition metals focus",
+          "summary": "South32 outlined strategic repositioning toward copper, zinc, and silver production to support energy transition, reinforcing responsible mine development positioning amid broader climate commitments.",
+          "relevance": "sustainability"
+        },
+        {
+          "date": "April 29, 2026",
+          "headline": "South32 Hermosa Project update confirms dry-stack tailings and 90% water reduction design",
+          "summary": "South32 announced Hermosa Project uses dry-stack tailings and 90% less water than regional mines; Final Biological Opinion signed with ESA-listed species conservation measures completed.",
+          "relevance": "sustainability"
+        },
+        {
+          "date": "February 12, 2026",
+          "headline": "South32 announces half-year results to December 2025; Scope 3 emissions reduced 58% through portfolio reshaping",
+          "summary": "South32 reported 58% reduction in Scope 3 emissions through portfolio changes and methodology enhancements, though Scope 1/2 operational emissions increased 2% due to Eskom backup power usage at Mozal.",
+          "relevance": "carbon_market"
+        }
+      ],
+      "overall_sentiment": "mixed",
+      "key_takeaway": "South32 made progress on carbon accounting and strategic repositioning toward energy transition metals in H1 2026, but faced significant setbacks on emissions targets due to Mozal's March 2026 closure and continued reliance on grid decarbonization beyond the company's control. The company's 2035 Scope 1/2 emissions reduction target faces material risks given 88% of emissions stem from grid electricity in regions where decarbonization progress is uncertain. No major carbon market/offset purchases announced; focus remains on avoidance over offsets per stated policy."
+    },
+    {
+      "company": "Stockland",
+      "news_items": [
+        {
+          "date": "2026-02",
+          "headline": "Stockland achieves net zero scope 1 and 2 emissions with scalable renewable model",
+          "relevance": "sustainability",
+          "summary": "Stockland announced achievement of net zero scope 1 and 2 emissions through large-scale rooftop solar deployment (45 MWp across 50+ buildings), renewable electricity sourcing, and retirement of high-quality nature-based carbon offsets including 2,400 ACCUs from a Queensland native woodland project."
+        }
+      ],
+      "overall_sentiment": "positive",
+      "key_takeaway": "Stockland achieved net zero scope 1&2 emissions in early 2026 via renewable energy deployment rather than pure offset reliance; now targeting 50% reduction in scope 3 emissions intensity by 2030. Limited material news on carbon market participation, ASRS-specific disclosures, or sustainability strategy pivots in the 6-month window\u2014primarily a milestone announcement on achieved emissions targets."
+    },
+    {
+      "company": "Downer EDI Limited",
+      "news_items": [],
+      "overall_sentiment": "neutral",
+      "key_takeaway": "No material carbon market, sustainability strategy, or climate-related announcements found for Downer EDI from January-June 2026. Company has established net zero 2050 and 2032 interim targets (50% reduction baseline), but Climate Transition Plan and updated Decarbonisation Plan remain in development with no formal disclosure yet. Recent news focused on financial results (Feb 2026) and facilities management contracts rather than carbon or climate initiatives."
+    },
+    {
+      "company": "Inghams Group Limited",
+      "news_items": [
+        {
+          "date": "2025-07",
+          "headline": "Marion Bay Chicken Certified Carbon Neutral by Climate Active",
+          "relevance": "carbon_market",
+          "summary": "Inghams' Marion Bay chicken products achieved Climate Active Carbon Neutral certification from paddock to shelf (first in Tasmanian poultry industry), offsetting remaining emissions via certified carbon credits after operational reductions including new refrigeration systems, heat recovery, and LED upgrades."
+        },
+        {
+          "date": "2026-04-01",
+          "headline": "78% of Inghams' NZ Contracted Grower Farms Transition to Solar-Backed Energy",
+          "relevance": "sustainability",
+          "summary": "Extended partnership with Lodestone energy provider brings renewable solar-backed energy to majority of Inghams' contracted poultry farms in New Zealand, advancing renewable energy transition."
+        },
+        {
+          "date": "2026-05-11",
+          "headline": "Inghams Group Investor Day Reaffirms FY2026 EBITDA Guidance Despite Cost Pressures",
+          "relevance": "sustainability",
+          "summary": "At May 2026 Investor Day, Inghams reaffirmed FY2026 EBITDA guidance of AUD 180-200M despite inflation from feed, fuel, packaging, and geopolitical costs impacting profitability and sustainability investments."
+        }
+      ],
+      "overall_sentiment": "neutral",
+      "key_takeaway": "Inghams Group has no significant carbon credit market purchases or major net-zero target announcements in H1 2026, but did complete Marion Bay carbon-neutral certification (via offsets, not scope reductions) and expanded renewable energy to 78% of NZ farms. The company remains on track toward its 2030 43% emissions reduction target (36.84% achieved as of 2023) and 2050 net-zero commitment. Material news is limited to execution of previously-announced sustainability initiatives; no climate-related controversy, greenwashing concerns, or ASRS disclosure updates detected in the search period."
+    },
+    {
+      "company": "Coles Group",
+      "news_items": [],
+      "overall_sentiment": "neutral",
+      "key_takeaway": "No significant carbon market, climate strategy, or ASRS disclosure announcements from Coles Group identified in January-June 2026. The company's publicly available climate information remains grounded in its FY25 Sustainability Report (released May 2025) and pre-existing commitments: 100% renewable electricity achieved (maintained through FY26-FY30), 75%+ Scope 1&2 emissions reduction by FY30, no reliance on carbon offsets for operational targets, and use of Australian Carbon Credit Units (ACCUs) only for the Coles Finest Certified Carbon Neutral product range. Solar panel rollout to 100 stores ongoing (completion targeted 2026, not a new announcement). No material greenwashing controversies or ASRS-specific disclosures reported in search results for this period."
+    },
+    {
+      "company": "Ampol Limited (ASX: ALD)",
+      "news_items": [
+        {
+          "date": "June 2026",
+          "headline": "Federal Government Supports Australian Low Carbon Liquid Fuels Program",
+          "summary": "Ampol and IFM Investors received federal government commitment of $1.1 billion over ten years to develop a renewable fuels facility at Ampol's Lytton Refinery, aiming to produce over 750 million litres annually of low-carbon liquid fuels.",
+          "relevance": "sustainability"
+        },
+        {
+          "date": "June 2026",
+          "headline": "ACCC Approves EG Australia Acquisition",
+          "summary": "Ampol's $1.1 billion acquisition of EG Australia, a 500-site fuel and convenience retailer, was approved with expected completion on 30 June 2026, expanding Ampol's footprint to over 1,000 owned locations.",
+          "relevance": "sustainability"
+        },
+        {
+          "date": "2025-2026 FY",
+          "headline": "Ampol Misses 2025 Greenhouse Gas Emissions Target at Lytton",
+          "summary": "Ampol failed to meet its 2025 emissions reduction target at the Lytton refinery, triggering a 1% increase in the call price on its sustainability-linked perpetual bonds.",
+          "relevance": "climate_target"
+        }
+      ],
+      "overall_sentiment": "mixed",
+      "key_takeaway": "Ampol made progress on low-carbon fuels strategy in H1 2026 with federal support for renewable fuels development, but the company missed its 2025 emissions reduction target at Lytton, which triggered financial penalties. No significant carbon credit/offset announcements, ASRS climate disclosures, or greenwashing controversies were identified in the January-June 2026 period; previous greenwashing complaints against Ampol's carbon-neutral fuel program date to 2022. The company maintains a net zero 2040 ambition for Scope 1&2 emissions but execution track record shows gaps against interim targets."
+    },
+    {
+      "company": "Qantas Airways Limited (Australian aviation company)",
+      "news_items": [
+        {
+          "date": "2026 (ongoing)",
+          "headline": "Qantas Faces ACCC Greenwashing Investigation Over Net Zero Claims",
+          "relevance": "controversy",
+          "summary": "Climate Integrity filed a complaint with the Australian Competition and Consumer Commission alleging Qantas's net zero commitment is 'not backed up by credible targets or substantiating strategies,' claiming the company's reliance on fossil fuels remains massive and its transition strategy lacks scientific credibility."
+        },
+        {
+          "date": "2026 Q2",
+          "headline": "Qantas Expands Voluntary Carbon Offset Program to Travel Agents",
+          "relevance": "carbon_market",
+          "summary": "Qantas made carbon offset purchases available to customers through Australian travel agents for the first time, expanding its voluntary carbon credit program beyond direct website bookings."
+        },
+        {
+          "date": "2026 (announced)",
+          "headline": "Qantas Joins Silva Carbon Fund as Foundational Investor",
+          "relevance": "carbon_market",
+          "summary": "Qantas committed to invest in the Silva Carbon Origination Fund alongside Rio Tinto and BHP to develop high-integrity nature-based Australian Carbon Credit Units (ACCUs), signaling expectation to double carbon market investment over five years."
+        },
+        {
+          "date": "2026 (late)",
+          "headline": "Qantas Begins Mandatory ASRS Climate Reporting Under Australian Regime",
+          "relevance": "climate_target",
+          "summary": "Qantas will commence reporting under Australia's mandatory climate-related financial disclosure requirements (ASRS/AASB S2) in late 2026, with FY26 as the first reporting year, including scenario analysis of transition and physical climate risks."
+        },
+        {
+          "date": "2026 (ongoing)",
+          "headline": "Qantas Commits to Indigenous-Led Carbon Credit Procurement",
+          "relevance": "carbon_market",
+          "summary": "Qantas announced that 25% of its voluntary carbon offsets will source from Aboriginal and Torres Strait Islander projects, including continued procurement from Arnhem Land Fire Abatement Northern Territory (ALFA NT) to support Traditional Owners."
+        }
+      ],
+      "overall_sentiment": "mixed",
+      "key_takeaway": "Qantas maintains aggressive carbon market procurement expansion (travel agent rollout, Silva Fund investment, Indigenous partnerships, 5-year doubling target) while simultaneously facing a material greenwashing investigation from Climate Integrity over the credibility of its net zero 2050 claim. Transition to mandatory ASRS reporting (late 2026) will subject claims to formal climate-related financial disclosure scrutiny, creating regulatory pressure to substantiate transition strategy and decarbonization pathways."
+    },
+    {
+      "company": "Rio Tinto",
+      "news_items": [
+        {
+          "date": "2026-02-XX",
+          "headline": "Rio Tinto Cuts Decarbonization Spending by 75%, Dissolves Climate Unit",
+          "relevance": "climate_target",
+          "summary": "New CEO Simon Trott reduced decarbonization budget from US$7.5B (2021-2030) to US$1-2B and disbanded the specialist decarbonization division, moving climate work back into commodity divisions and relying on third-party partnerships."
+        },
+        {
+          "date": "2026-01-30",
+          "headline": "Rio Tinto and Chalco Acquire CBA for Expansion of Low-Carbon Aluminium Footprint",
+          "relevance": "sustainability",
+          "summary": "Rio Tinto (33% stake, US$297.8M) and Chalco (67% stake) acquired Votorantim's controlling interest in Brazil's CBA, a vertically integrated aluminium producer powered 100% by renewable electricity including 21 hydropower plants and wind complexes."
+        },
+        {
+          "date": "2026-01-XX",
+          "headline": "Rio Tinto Advances AP60 Low-Carbon Smelter Technology, Eliminates Direct Aluminium Smelting Emissions",
+          "relevance": "sustainability",
+          "summary": "Rio Tinto completed commissioning of its US$1.5B AP60 smelter expansion using ELYSIS technology that eliminates all direct greenhouse gas emissions from aluminium smelting, reducing annual carbon emissions by 290,000 tonnes versus legacy Arvida smelter."
+        },
+        {
+          "date": "2026-02-XX",
+          "headline": "Rio Tinto Admits Missing 2025 Carbon Reduction Target Without Carbon Credit Purchases",
+          "relevance": "climate_target",
+          "summary": "Rio Tinto revealed it cannot reach its 2025 decarbonization target of 15% emissions reduction without purchasing carbon offsets, indicating reliance on Safeguard Mechanism credits under Australia's climate rules."
+        },
+        {
+          "date": "2026-02-XX",
+          "headline": "Rio Tinto Abandons BioIron Program, Pivots to Lower-Cost Green Iron Technology Investment",
+          "relevance": "sustainability",
+          "summary": "Rio Tinto discontinued its US$215M BioIron decarbonization program in favour of a US$35M investment into Calix's green iron-making technology, reflecting strategic shift toward contractor partnerships rather than internal R&D."
+        }
+      ],
+      "overall_sentiment": "mixed",
+      "key_takeaway": "Rio Tinto's 2026 climate strategy reflects a significant recalibration: while maintaining headline 2030 emissions reduction targets (50%), the company cut decarbonization spending by 75%, dissolved its climate unit, and acknowledged it will miss near-term (2025) targets without carbon credits. Conversely, it expanded low-carbon aluminium production through the CBA acquisition and ELYSIS technology deployment, signalling a shift from internal innovation funding to operational emissions reduction and third-party partnerships. This pragmatic but controversial approach prioritizes financial returns over climate ambition, creating reputational tension between emissions reduction rhetoric and budget constraints."
+    },
+    {
+      "company": "CDC Data Centres",
+      "news_items": [],
+      "overall_sentiment": "neutral",
+      "key_takeaway": "CDC Data Centres has no material public announcements specifically related to carbon markets, carbon credit purchases, sustainability strategy changes, or climate-related developments in the January-June 2026 period. The company published its first AASB S2 climate-related disclosures (mandatory for 30 June 2026 reporting) detailing a 2030 net zero target across Scope 1, 2, and three Scope 3 categories, but this is regulatory compliance rather than a material strategic announcement. Primary H1 2026 focus was facility expansion (Melbourne campus opening March 2026, 555MW contract secured) rather than climate/carbon initiatives. The company's existing net zero certification in New Zealand and commitment to net zero by 2030 in Australia remain stated targets without recent H1 2026 progress announcements on carbon markets or offsets."
+    },
+    {
+      "company": "BHP",
+      "news_items": [
+        {
+          "date": "June 2025",
+          "headline": "BHP FY2025 Annual Report: Decarbonization Spending and Technology Delays",
+          "summary": "BHP reported approximately US$50M in incremental capital and operating expenditure on operational GHG emission reduction initiatives in FY2025, with delays in diesel displacement technology now pushed into the 2030s due to slower development of commercial decarbonization solutions.",
+          "relevance": "sustainability"
+        },
+        {
+          "date": "2026 (Expected)",
+          "headline": "Boston Metal's MOE Technology Commercialization in Steel Market",
+          "summary": "BHP-backed Boston Metal expects to bring its Molten Oxide Electrolysis technology to market in 2026, offering a decarbonized steelmaking solution that supports BHP's medium-term steelmaking emissions intensity goal and long-term net zero ambitions.",
+          "relevance": "carbon_market"
+        },
+        {
+          "date": "H1 2026",
+          "headline": "BHP On Track to Exceed 2030 Emissions Reduction Target",
+          "summary": "BHP has already surpassed its 2030 target of 30% operational emissions reduction (achieved 32% reduction by FY2023), and maintains focus on renewable energy PPAs and technology pilots despite delays in electric truck (expected 2026) and rail technologies.",
+          "relevance": "climate_target"
+        }
+      ],
+      "overall_sentiment": "neutral",
+      "key_takeaway": "BHP has no major carbon market or carbon credit announcements in H1 2026; strategy remains focused on structural decarbonization (renewables, technology partnerships like Boston Metal) rather than carbon offset purchases. Company is ahead of 2030 emissions targets but faces technology delays in key abatement pathways, particularly for diesel displacement and electrification of heavy equipment. No material greenwashing controversies or ASRS-related disclosures emerged in the search period."
+    }
+  ]
+}

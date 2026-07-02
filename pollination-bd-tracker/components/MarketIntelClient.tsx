@@ -5,6 +5,13 @@ import {
 } from 'recharts'
 import type { SafeguardRow } from '@/app/market-intelligence/page'
 
+interface StrategyMixItem {
+  strategy: string
+  count: number
+  accus: number
+  smcs: number
+}
+
 interface Props {
   totalACCUs: number
   totalEmitters: number
@@ -14,6 +21,9 @@ interface Props {
   methodBreakdown: { method: string; volume: number }[]
   topRetirers: SafeguardRow[]
   fetchError: string | null
+  totalSMCs: number
+  strategyMix: StrategyMixItem[]
+  smcOnlyEntities: SafeguardRow[]
 }
 
 const SECTOR_COLORS = [
@@ -91,6 +101,7 @@ function MethodPills({ byMethod }: { byMethod: Record<string, number> | null }) 
 export default function MarketIntelClient({
   totalACCUs, totalEmitters, buyerCount, avgIntensity,
   sectors, methodBreakdown, topRetirers, fetchError,
+  totalSMCs, strategyMix, smcOnlyEntities,
 }: Props) {
   const STAT_CARDS = [
     {
@@ -117,6 +128,12 @@ export default function MarketIntelClient({
       sub: 'ACCUs surrendered / covered emissions',
       color: '#0D4474',
     },
+    {
+      label: 'SMCs surrendered',
+      value: fmt(totalSMCs),
+      sub: 'Safeguard Mechanism Credits 2024-25',
+      color: '#e86f2c',
+    },
   ]
 
   return (
@@ -140,7 +157,7 @@ export default function MarketIntelClient({
       <div className="max-w-6xl mx-auto px-6 py-8 space-y-8">
 
         {/* Stat cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {STAT_CARDS.map(s => (
             <div key={s.label} className="bg-white rounded-xl border border-[#e6e9ef] p-5">
               <div className="w-2 h-2 rounded-full mb-3" style={{ background: s.color }} />
@@ -221,6 +238,102 @@ export default function MarketIntelClient({
           </div>
         </div>
 
+        {/* Compliance Strategy Mix */}
+        <div className="bg-white rounded-xl border border-[#e6e9ef] p-6">
+          <div className="mb-5">
+            <h2 className="text-sm font-bold text-[#323338]">Compliance Strategy Mix</h2>
+            <p className="text-xs text-[#676879] mt-0.5">
+              How 177 obligated entities met their 2024-25 obligations
+            </p>
+          </div>
+          {/* Segmented bar */}
+          {(() => {
+            const totalCount = strategyMix.reduce((s, x) => s + x.count, 0)
+            const STRATEGY_META: Record<string, { label: string; color: string }> = {
+              accu:  { label: 'ACCU buyers',    color: '#276C75' },
+              mixed: { label: 'ACCU + SMC',     color: '#499BA6' },
+              smc:   { label: 'SMC only',        color: '#e86f2c' },
+              none:  { label: 'No surrenders',   color: '#c3c6d4' },
+            }
+            return (
+              <>
+                <div className="flex w-full h-8 rounded-lg overflow-hidden mb-4">
+                  {strategyMix.map(x => {
+                    const pct = totalCount > 0 ? (x.count / totalCount) * 100 : 0
+                    const meta = STRATEGY_META[x.strategy] ?? { label: x.strategy, color: '#c3c6d4' }
+                    return (
+                      <div
+                        key={x.strategy}
+                        style={{ width: `${pct}%`, background: meta.color }}
+                        title={`${meta.label}: ${x.count} entities`}
+                      />
+                    )
+                  })}
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {strategyMix.map(x => {
+                    const meta = STRATEGY_META[x.strategy] ?? { label: x.strategy, color: '#c3c6d4' }
+                    return (
+                      <div key={x.strategy} className="flex flex-col gap-1">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ background: meta.color }} />
+                          <span className="text-xs font-semibold text-[#323338]">{meta.label}</span>
+                        </div>
+                        <p className="text-xl font-bold text-[#323338] leading-none">{x.count}</p>
+                        <p className="text-[10px] text-[#676879]">entities</p>
+                        {x.accus > 0 && (
+                          <p className="text-[10px] text-[#499BA6] font-medium">{fmt(x.accus)} ACCUs</p>
+                        )}
+                        {x.smcs > 0 && (
+                          <p className="text-[10px] text-[#e86f2c] font-medium">{fmt(x.smcs)} SMCs</p>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </>
+            )
+          })()}
+        </div>
+
+        {/* SMC-Only Prospects table */}
+        <div className="bg-white rounded-xl border border-[#e6e9ef] overflow-hidden">
+          <div className="px-6 py-4 border-b border-[#e6e9ef] flex items-center justify-between">
+            <div>
+              <h2 className="text-sm font-bold text-[#323338]">SMC-Only Compliers — Greenfield ACCU Prospects</h2>
+              <p className="text-xs text-[#676879] mt-0.5">
+                Obligated entities with no established ACCU procurement — no incumbent carbon-credit strategy
+              </p>
+            </div>
+            <span className="text-[10px] bg-[#fde8d8] text-[#e86f2c] font-bold px-2 py-1 rounded-full">
+              BD Prospects
+            </span>
+          </div>
+          <div className="divide-y divide-[#f6f7fb]">
+            {smcOnlyEntities.map((r, i) => (
+              <div key={r.company_name} className="px-6 py-3 hover:bg-[#fafbff] transition-colors">
+                <div
+                  className="grid items-center gap-3"
+                  style={{ gridTemplateColumns: '28px 2fr 1fr 1fr' }}
+                >
+                  <span className="text-xs font-bold text-[#c3c6d4]">#{i + 1}</span>
+                  <span className="text-sm font-semibold text-[#323338] truncate">{r.company_name}</span>
+                  <span className="text-xs text-[#676879]">
+                    {r.net_emissions != null
+                      ? r.net_emissions >= 1_000_000
+                        ? `${(r.net_emissions / 1_000_000).toFixed(1)}Mt net`
+                        : `${Math.round(r.net_emissions / 1_000)}k net`
+                      : '—'}
+                  </span>
+                  <span className="text-xs font-bold text-[#e86f2c] text-right tabular-nums">
+                    {r.smcs_surrendered != null && r.smcs_surrendered > 0 ? fmt(r.smcs_surrendered) + ' SMCs' : '—'}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Top retirers table with method pills */}
         <div className="bg-white rounded-xl border border-[#e6e9ef] overflow-hidden">
           <div className="px-6 py-4 border-b border-[#e6e9ef] flex items-center justify-between">
@@ -273,8 +386,8 @@ export default function MarketIntelClient({
 
         {/* Data note */}
         <p className="text-[11px] text-[#c3c6d4] text-center pb-4">
-          Source: CER Safeguard Mechanism 2024-25 public data. Method type from ACCU methodology determination.
-          Annual trend requires prior-year CER surrender CSVs (not yet ingested).
+          Source: CER Safeguard Mechanism 2024-25 public data. ACCU and SMC surrender data included.
+          Method type from ACCU methodology determination. Annual trend requires prior-year CER surrender CSVs (not yet ingested).
         </p>
       </div>
     </div>

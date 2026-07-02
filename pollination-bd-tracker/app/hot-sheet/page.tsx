@@ -11,6 +11,6 @@ const getCachedHotSheet = unstable_cache(
 )
 
 export default async function HotSheetPage() {
-  const { main, sbtiV2 } = await getCachedHotSheet()
-  return <HotSheetClient companies={main} sbtiV2Companies={sbtiV2} />
+  const companies = await getCachedHotSheet()
+  return <HotSheetClient companies={companies} />
 }

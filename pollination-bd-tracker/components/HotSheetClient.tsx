@@ -6,10 +6,10 @@ import { ChevronDown, ChevronRight, Newspaper, Leaf } from 'lucide-react'
 import type { Company } from '@/lib/types'
 import { asrsGroupBadge, relationshipBadge } from '@/lib/types'
 import { Badge, ScorePill } from '@/components/Badge'
+import { updateTrigger } from '@/lib/data'
 
 interface Props {
   companies: Company[]
-  sbtiV2Companies: Company[]
 }
 
 function SbtiPill({ status }: { status: string | null }) {
@@ -124,7 +124,117 @@ function CarbonPanel({ research, news }: { research: string | null; news: string
   )
 }
 
-function CompanyRow({ company }: { company: Company }) {
+function triggerUrgencyClass(dateStr: string | null): string {
+  if (!dateStr) return 'text-[#676879]'
+  const days = Math.ceil((new Date(dateStr).getTime() - Date.now()) / 86_400_000)
+  if (days <= 14) return 'text-[#c0253d] font-semibold'
+  if (days <= 45) return 'text-[#c47c00]'
+  return 'text-[#676879]'
+}
+
+function formatTriggerDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: '2-digit' })
+}
+
+function TriggerCell({
+  company,
+  onUpdate,
+}: {
+  company: Company
+  onUpdate: (date: string | null, type: string | null) => void
+}) {
+  const [editing, setEditing] = useState(false)
+  const [draftDate, setDraftDate] = useState(company.next_trigger_date ?? '')
+  const [draftType, setDraftType] = useState(company.trigger_type ?? '')
+  const [saving, setSaving] = useState(false)
+
+  function handleClick(e: React.MouseEvent) {
+    e.stopPropagation()
+    setDraftDate(company.next_trigger_date ?? '')
+    setDraftType(company.trigger_type ?? '')
+    setEditing(true)
+  }
+
+  async function handleSave(e: React.MouseEvent) {
+    e.stopPropagation()
+    setSaving(true)
+    try {
+      const date = draftDate || null
+      const type = draftType || null
+      await updateTrigger(company.id, date, type)
+      onUpdate(date, type)
+      setEditing(false)
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  function handleCancel(e: React.MouseEvent) {
+    e.stopPropagation()
+    setEditing(false)
+  }
+
+  if (editing) {
+    return (
+      <div className="flex flex-col gap-1 py-2" onClick={e => e.stopPropagation()}>
+        <input
+          type="text"
+          placeholder="Type (e.g. ASRS filing)"
+          value={draftType}
+          onChange={e => setDraftType(e.target.value)}
+          className="text-xs border border-[#e6e9ef] rounded px-1.5 py-0.5 w-28 focus:outline-none focus:border-[#0073ea]"
+        />
+        <input
+          type="date"
+          value={draftDate}
+          onChange={e => setDraftDate(e.target.value)}
+          className="text-xs border border-[#e6e9ef] rounded px-1.5 py-0.5 w-28 focus:outline-none focus:border-[#0073ea]"
+        />
+        <div className="flex gap-1">
+          <button
+            onClick={handleSave}
+            disabled={saving}
+            className="text-[10px] bg-[#0073ea] text-white px-1.5 py-0.5 rounded hover:bg-[#0060c0] disabled:opacity-50"
+          >
+            {saving ? '…' : 'Save'}
+          </button>
+          <button
+            onClick={handleCancel}
+            className="text-[10px] text-[#676879] px-1.5 py-0.5 rounded border border-[#e6e9ef] hover:bg-[#f6f7fb]"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  if (!company.next_trigger_date) {
+    return (
+      <button
+        onClick={handleClick}
+        className="text-xs text-[#c3c6d4] hover:text-[#676879] transition-colors text-left"
+      >
+        —
+      </button>
+    )
+  }
+
+  const urgency = triggerUrgencyClass(company.next_trigger_date)
+  return (
+    <button onClick={handleClick} className="flex flex-col text-left hover:opacity-80 transition-opacity">
+      <span className={`text-xs leading-tight ${urgency}`}>
+        {company.trigger_type ?? 'Trigger'}
+      </span>
+      <span className={`text-[10px] leading-tight ${urgency}`}>
+        {formatTriggerDate(company.next_trigger_date)}
+      </span>
+    </button>
+  )
+}
+
+function CompanyRow({ company: initialCompany }: { company: Company }) {
+  const [company, setCompany] = useState(initialCompany)
   const [expanded, setExpanded] = useState(false)
   const rb = relationshipBadge(company.relationship_status)
   const gb = asrsGroupBadge(company.asrs_group)
@@ -132,10 +242,14 @@ function CompanyRow({ company }: { company: Company }) {
   const newsSummary = (company as any).news_6m_summary as string | null
   const hasData = !!(carbonResearch || newsSummary)
 
+  function handleTriggerUpdate(date: string | null, type: string | null) {
+    setCompany(prev => ({ ...prev, next_trigger_date: date, trigger_type: type }))
+  }
+
   return (
     <>
       <div
-        className="grid grid-cols-[2fr_65px_100px_160px_1fr_120px_36px] px-6 py-0 gap-3 border-b border-[#e6e9ef] hover:bg-[#e8f0fd]/20 transition-colors items-stretch cursor-pointer"
+        className="grid grid-cols-[2fr_65px_100px_160px_1fr_130px_120px_36px] px-6 py-0 gap-3 border-b border-[#e6e9ef] hover:bg-[#e8f0fd]/20 transition-colors items-stretch cursor-pointer"
         onClick={() => setExpanded(e => !e)}
       >
         <div className="flex flex-col justify-center py-3 min-w-0">
@@ -153,6 +267,9 @@ function CompanyRow({ company }: { company: Company }) {
         <div className="flex items-center"><SbtiPill status={company.sbti_status} /></div>
         <div className="flex items-center min-w-0">
           <p className="text-xs text-[#676879] truncate">{company.top_signal ?? '—'}</p>
+        </div>
+        <div className="flex items-center">
+          <TriggerCell company={company} onUpdate={handleTriggerUpdate} />
         </div>
         <div className="flex items-center">
           <Badge label={rb.label} className={rb.className} />
@@ -173,7 +290,23 @@ function CompanyRow({ company }: { company: Company }) {
   )
 }
 
-export default function HotSheetClient({ companies }: Props) {
+type SortMode = 'score' | 'trigger'
+
+export default function HotSheetClient({ companies: initialCompanies }: Props) {
+  const [sortMode, setSortMode] = useState<SortMode>('score')
+
+  const companies = sortMode === 'trigger'
+    ? [...initialCompanies].sort((a, b) => {
+        const aDate = a.next_trigger_date
+        const bDate = b.next_trigger_date
+        if (aDate && bDate) return aDate < bDate ? -1 : aDate > bDate ? 1 : 0
+        if (aDate) return -1
+        if (bDate) return 1
+        // Both null — fall back to score desc
+        return (b.score_overall ?? 0) - (a.score_overall ?? 0)
+      })
+    : initialCompanies
+
   return (
     <div>
       {/* Page header */}
@@ -184,12 +317,30 @@ export default function HotSheetClient({ companies }: Props) {
             {companies.length} prospects
           </span>
         </div>
-        <p className="text-xs text-[#676879]">Click any row to expand carbon market DD & news</p>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 text-xs text-[#676879]">
+            <span className="font-semibold">Sort:</span>
+            <button
+              onClick={() => setSortMode('score')}
+              className={`px-2 py-0.5 rounded transition-colors ${sortMode === 'score' ? 'bg-[#0073ea] text-white font-semibold' : 'hover:bg-[#f6f7fb]'}`}
+            >
+              Score
+            </button>
+            <span className="text-[#c3c6d4]">|</span>
+            <button
+              onClick={() => setSortMode('trigger')}
+              className={`px-2 py-0.5 rounded transition-colors ${sortMode === 'trigger' ? 'bg-[#0073ea] text-white font-semibold' : 'hover:bg-[#f6f7fb]'}`}
+            >
+              Next trigger
+            </button>
+          </div>
+          <p className="text-xs text-[#676879]">Click any row to expand carbon market DD & news</p>
+        </div>
       </div>
 
       {/* Column headers */}
-      <div className="sticky top-[105px] z-10 bg-[#f6f7fb] border-b border-[#e6e9ef] grid grid-cols-[2fr_65px_100px_160px_1fr_120px_36px] px-6 py-2 gap-3">
-        {['Company', 'Score', 'ASRS Group', 'SBTi', 'Top Signal', 'Relationship', ''].map(h => (
+      <div className="sticky top-[105px] z-10 bg-[#f6f7fb] border-b border-[#e6e9ef] grid grid-cols-[2fr_65px_100px_160px_1fr_130px_120px_36px] px-6 py-2 gap-3">
+        {['Company', 'Score', 'ASRS Group', 'SBTi', 'Top Signal', 'Next Trigger', 'Relationship', ''].map(h => (
           <span key={h} className="text-[11px] font-semibold text-[#676879] uppercase tracking-wide">{h}</span>
         ))}
       </div>

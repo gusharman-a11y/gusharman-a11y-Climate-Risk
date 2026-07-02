@@ -93,8 +93,23 @@ export interface Company {
   score_relationship: number | null
   score_overall: number | null
   top_signal: string | null
+  // BD triggers
+  next_trigger_date: string | null
+  trigger_type: string | null
   created_at: string
   updated_at: string
+}
+
+// Safeguard compliance data from the carbon-intel DB, matched by company name
+export interface SafeguardPosition {
+  company_name: string
+  accus_surrendered: number | null
+  smcs_surrendered: number | null
+  net_emissions: number | null
+  safeguard_emissions: number | null
+  safeguard_baseline: number | null
+  compliance_strategy: string | null
+  surrendered_by_method: Record<string, number> | null
 }
 
 export interface Signal {

@@ -1,0 +1,249 @@
+[
+  {
+    "company_name": "ALS LIMITED",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_description": "Reduce absolute Scope 1 and 2 emissions by 78%",
+    "target_scope": "Scope 1, Scope 2, and Scope 3",
+    "target_classification": "near_term_target",
+    "net_zero_year": 2050,
+    "sbti_notes": "No evidence of SBTi validation. Target does not appear in SBTi target dashboard. Targets are internally set and disclosed in company sustainability reports.",
+    "notes": "ALS LIMITED has committed to Net Zero by 2050 with Scope 1 & 2 emissions reduced by 95% and Scope 3 by 90% against 2020 baseline. Near-term 2030 target is 78% reduction in Scope 1 & 2. Baseline year: 2020. By March 2023, company had already achieved 58% reduction and carbon neutrality for Scope 1 & 2, exceeding initial 40% by 2030 goal. Scope 3 inventory calculated in FY2023; formal 2030 target to be set within two years.",
+    "sources": [
+      "https://www.alsglobal.com/en/news-and-publications/2024/01/enviromail-149-australia-net-zero-commitments-and-roadmap",
+      "https://www.alsglobal.com/en/sustainability",
+      "https://tracenable.com/company/als/climate-targets"
+    ]
+  },
+  {
+    "company_name": "Cleanaway Waste Management Limited",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_description": "34% reduction in methane emissions and 43% reduction in CO2 emissions by 2030 (from FY22 baseline)",
+    "target_scope": "Scope 1 (direct landfill methane emissions) and Scope 2 (electricity and facility operations). Methane comprises ~80% of emissions from landfill sites; CO2 from fleet combustion and energy use.",
+    "target_classification": "near_term_target",
+    "net_zero_year": 2050,
+    "sbti_notes": "Targets are internally set and aligned with a 1.5\u00b0C Paris Agreement trajectory. Cleanaway states targets are \"consistent with a 1.5 degree trajectory\" but targets have NOT been formally validated by SBTi (Science Based Targets Initiative). Company is a signatory to the Global Methane Pledge (30% methane reduction by 2030).",
+    "sources": [
+      "https://www.cleanaway.com.au/sustainable-future/methane-pledge/",
+      "https://www.cleanaway.com.au/sustainability-report",
+      "https://announcements.asx.com.au/asxpdf/20240821/pdf/066ts15q3sq3w6.pdf",
+      "https://www.footprintnews.com.au/news/cleanaway-not-aiming-for-net-zero-by-2050-82181",
+      "https://ditchcarbon.com/organizations/cleanaway-waste-management"
+    ]
+  },
+  {
+    "company_name": "Grosvenor Engineering Group Pty Ltd",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_scope": "",
+    "target_description": "",
+    "target_classification": "",
+    "net_zero_year": null,
+    "sbti_notes": "No SBTi validation or approval found for Grosvenor Engineering Group Pty Ltd. The company does not appear to have published science-based targets.",
+    "notes": "Comprehensive search of public sources found no published emissions reduction targets, net zero commitments, or climate goals for Grosvenor Engineering Group Pty Ltd (the Australian building services company). The company offers sustainability services to clients and has achieved NABERS ratings, but does not appear to have public climate targets for its own operations. Search results consistently returned information about Grosvenor (UK property group), which has extensive climate targets, but these are not attributed to the Australian engineering subsidiary.",
+    "sources": [
+      "https://www.gegroup.com.au/",
+      "https://au.linkedin.com/company/grosvenor-engineering-group",
+      "https://www.gegroup.com.au/about-us/",
+      "https://www.gegroup.com.au/green-alternative-natural-refrigerants-technology-set-to-drive-carbon-footprint-down/",
+      "https://www.gegroup.com.au/sustainability-tips-and-trends-in-facilities-management-2/"
+    ]
+  },
+  {
+    "company_name": "METRICS REAL ESTATE MULTI-STRATEGY FUND",
+    "confidence": "medium",
+    "target_classification": "near_term_target",
+    "target_year": 2027,
+    "target_description": "Portfolio temperature rating reduction: Scope 1+2 from 3.2\u00b0C (2021 baseline) to 2.3\u00b0C by 2027; Scope 1+2+3 from 3.2\u00b0C to 2.5\u00b0C by 2027. Additionally, reduce absolute Scope 1 and 2 (market-based) GHG emissions 50% by 2030 from 2021 base year.",
+    "target_scope": "Scope 1, 2, and 3; Portfolio temperature rating covers corporate loans, private equity, and project finance with 97.5% coverage of assets under management",
+    "net_zero_year": 2050,
+    "sbti_notes": "Metrics Credit Partners (fund manager) is working toward verification of SBTi targets. Company commits to set long-term science-based target to reach net-zero value chain GHG emissions by no later than 2050 in line with SBTi Net-Zero Standard. Signatory to Net Zero Asset Managers (NZAM) initiative. Near-term targets (2030 operational; 2027 portfolio) aligned with SBTi Financial Sector Guidance at 1.5\u00b0C ambition for operations and 1.5\u00b0C/2\u00b0C for portfolio.",
+    "sources": [
+      "https://www.netzeroassetmanagers.org/signatories/metrics-credit-partners/",
+      "https://www.metrics.com.au/esg-responsible-investing",
+      "https://www.metrics.com.au/listed-funds/metrics-real-estate-multi-strategy-fund",
+      "https://pinnacleinvestment.com/our-funds/metrics-real-estate-multi-strategy-fund-asxmre/"
+    ],
+    "notes": "The targets are corporate-level commitments from Metrics Credit Partners (the fund manager), not specific unique targets for the MRE fund itself. The fund prospectus and investor materials do not disclose fund-specific climate targets, only the manager's commitments. Confidence is \"medium\" because while the targets are verified through NZAM signatory status and official company ESG pages, they apply to the fund manager rather than the fund as a distinct entity. For fund-specific climate disclosures, investors should consult the Product Disclosure Statement (PDS) and ASX announcements."
+  },
+  {
+    "company_name": "NIB Holdings Limited",
+    "confidence": "high",
+    "target_year": 2030,
+    "target_scope": "Scope 1, Scope 2, Scope 3",
+    "target_description": "Scope 1 & 2: 50% reduction by 2030 (baseline 2021); Scope 3: 25% reduction by 2030 (baseline 2020, covering 1 of 15 categories)",
+    "target_classification": "near_term_target",
+    "net_zero_year": 2040,
+    "sbti_notes": "No SBTi validation found for NIB Holdings Limited. (Note: Nordic Investment Bank is a different organization with SBTi-validated targets.)",
+    "notes": "NIB Holdings Limited (ASX:NHF) is an Australian health insurance company. Company has achieved a 93% reduction in Scope 1 & 2 emissions by FY22 (baseline FY21), already exceeding its 2030 target. However, Scope 3 value chain emissions increased 90% from 2020 baseline to 2025, placing the company off track on that metric. The company is certified carbon neutral through Climate Active and reports annually through TCFD framework and Carbon Disclosure Project. Targets are internally set and disclosed in sustainability reports, not third-party validated by SBTi.",
+    "sources": [
+      "https://nib.com.au/media/2022/10/mp-article-nib-sets-pathway-to-net-zero-by-2040",
+      "https://tracenable.com/company/nib-holdings/climate-targets",
+      "https://www.nib.com.au/shareholders/company-profile/sustainability",
+      "https://www.listcorp.com/asx/nhf/nib-holdings-limited/news/2024-sustainability-report-3073646.html",
+      "https://www.nib.com.au/shareholders/previous-years-sustainability-report"
+    ]
+  },
+  {
+    "company_name": "Erilyan Group Pty Ltd",
+    "confidence": "medium",
+    "target_year": null,
+    "target_description": "Company has stated commitment to net zero and is on a \"net zero journey\" with decarbonization plans including switching to carbon neutral energy, reducing business travel emissions, and engaging staff in climate action. However, no specific quantified reduction targets (e.g., % reduction from base year) are publicly disclosed.",
+    "target_scope": "Measured emissions include: electricity, business travel, capital goods, employee commute, purchased goods and services, waste. Scope 1, 2, 3 breakdown not explicitly defined.",
+    "target_classification": "net_zero_committed",
+    "sbti_notes": "No evidence of SBTi validation. Company verified their own emissions calculations through Trace platform but no independent third-party science-based target validation found.",
+    "net_zero_year": null,
+    "notes": "Company has achieved \"Climate Positive\" status with 100% offset of emissions as of 2024 (252.0 tCO2 net after offsets; gross 336.5 tCO2). Current climate positive certification expires November 4, 2026. Company is member of Green Building Council of Australia. ISO 14001:2015 certified. Primary source is Trace platform case study and brand profile; no formal sustainability report found.",
+    "sources": [
+      "https://www.our-trace.com/brand/erilyan",
+      "https://www.our-trace.com/case-studies/erilyan",
+      "https://www.gbca.au/member-directory/erilyan-pty-ltd"
+    ]
+  },
+  {
+    "company_name": "MinterEllison Services Pty Limited",
+    "confidence": "medium",
+    "net_zero_year": 2030,
+    "target_year": 2030,
+    "target_classification": "near_term_target",
+    "target_scope": "Scope 1 and Scope 2 (committed); Scope 3 (under development)",
+    "target_description": "Net zero Scope 1 and 2 emissions by 2030. Interim target: all offices to operate on renewable energy where available by 2025. Scope 3 emissions to be meaningfully reduced with SBTi target to be set by 2030.",
+    "sbti_notes": "In process of setting science-based targets in consultation with SBTi. No validated targets currently published. Targets are not yet SBTi-verified.",
+    "notes": "No specific percentage reduction targets published. No explicit base year stated in public disclosures. Achieved Climate Active certification in July 2023 (renewed 2024). Withdrew from Climate Active program effective 6 August 2025. Scope 3 targets still under development as of latest information.",
+    "sources": [
+      "https://www.minterellison.com/responsible-business/environmental-sustainability",
+      "https://www.climateactive.org.au/buy-climate-active/certified-members/minter-ellison",
+      "https://www.climateactive.org.au/sites/default/files/2024-05/Public%20Disclosure%20Statement%20-%20MinterEllison%20-%20FY2023%20-%20signed.pdf",
+      "https://www.climateactive.org.au/sites/default/files/2023-07/signed%20-%20Climate%20Active%20Public%20Disclosure%20Statement%20-%20MinterEllison%20July%202023.pdf"
+    ]
+  },
+  {
+    "company_name": "METRICS INCOME OPPORTUNITIES TRUST",
+    "confidence": "medium",
+    "target_classification": "near_term_target",
+    "target_description": "METRICS INCOME OPPORTUNITIES TRUST does not have separate climate targets as it is a managed fund. Climate targets disclosed are attributable to the investment manager, Metrics Credit Partners Pty Ltd. Metrics Credit Partners has committed to: (1) reduce absolute Scope 1 and 2 (market-based) GHG emissions 50% by 2030 from 2021 base year (operational emissions); (2) reduce portfolio temperature score from 3.2\u00b0C (2021) to 2.3\u00b0C by 2027 for Scope 1+2 (financed emissions); (3) achieve net-zero value chain GHG emissions by no later than 2050.",
+    "target_year": 2030,
+    "target_scope": "Scope 1, Scope 2 (operational); Scope 1, 2, and 3 (portfolio/financed emissions)",
+    "net_zero_year": 2050,
+    "sbti_notes": "Metrics Credit Partners (the investment manager) made Initial Target Disclosure to SBTi in November 2022 via Net Zero Asset Managers initiative. NOT YET verified by SBTi. Company committed to seeking SBTi validation within 24 months following publication of SBTi Financial Institutions Net-Zero Standard.",
+    "sources": [
+      "https://www.netzeroassetmanagers.org/signatories/metrics-credit-partners/",
+      "https://www.metrics.com.au/esg-responsible-investing",
+      "https://announcements.asx.com.au/asxpdf/20230823/pdf/05sz0ds83g80th.pdf",
+      "https://www.metrics.com.au/listed-funds/metrics-income-opportunities-trust"
+    ],
+    "notes": "METRICS INCOME OPPORTUNITIES TRUST (ASX:MOT) is a listed managed investment trust focusing on private credit. The trust itself does not set separate climate targets. The targets disclosed apply to Metrics Credit Partners Pty Ltd, the investment manager. Metrics measures financed emissions across 97.5% of portfolio by value. Confidence is \"medium\" because while targets are clearly stated by the manager and disclosed via NZAM, they are not yet SBTi-verified and apply at the manager level rather than the fund level specifically."
+  },
+  {
+    "company_name": "FDC Group Holdings Pty Ltd",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_classification": "",
+    "target_description": "",
+    "target_scope": "",
+    "net_zero_year": null,
+    "sbti_notes": "Not listed in SBTi Target Dashboard. No evidence of SBTi-validated targets.",
+    "notes": "FDC Group Holdings Pty Ltd is an Australian construction and fitout company (ABN 68 615 183 358) established in 1990, with revenues exceeding $1 billion and 600+ employees. Despite comprehensive research across sustainability reports, Modern Slavery Statements, website resources, and public databases, no formally stated emissions reduction targets or net zero commitments were found. The company demonstrates sustainability commitment through project-level certifications (Green Star, NABERS, WELL) and maintains an EcoVadis-certified ESG framework, but does not publish company-level climate targets, absolute or intensity-based emissions reduction goals, or net zero commitment years.",
+    "sources": [
+      "https://www.fdcbuilding.com.au/",
+      "https://modernslaveryregister.gov.au/statements/NeXS5yLcav4iGRM/pdf/",
+      "https://www.fdcbuilding.com.au/wp-content/uploads/2025/01/FDC-Modern-Slavery-Statement-2024_.pdf",
+      "https://www.fdcbuilding.com.au/sustainability/",
+      "https://sciencebasedtargets.org/target-dashboard"
+    ]
+  },
+  {
+    "company_name": "North Stawell Minerals Ltd",
+    "confidence": "not_found",
+    "target_year": null,
+    "target_description": "",
+    "target_scope": "",
+    "target_classification": "",
+    "net_zero_year": null,
+    "sbti_notes": "Not found in SBTi Target Dashboard; no evidence of SBTi-validated targets",
+    "notes": "Comprehensive search found no publicly stated emissions reduction targets or net zero commitments. Company implements environmental stewardship practices including carbon footprint tracking and reporting, water/waste management, and biodiversity procedures as member of Minerals Council of Australia. No formal ESG or sustainability report with climate targets identified in public sources including ASX announcements, company website, and financial databases.",
+    "sources": [
+      "https://northstawellminerals.com/",
+      "https://www.morningstar.com.au/investments/security/ASX/NSM/sustainability",
+      "https://www.listcorp.com/asx/nsm/north-stawell-minerals-limited",
+      "https://finance.yahoo.com/quote/NSM.AX/",
+      "https://sciencebasedtargets.org/target-dashboard",
+      "https://announcements.asx.com.au/asxpdf/20250624/pdf/06l1k0wnktv9kw.pdf"
+    ]
+  },
+  {
+    "company_name": "Soho Flordis International Pty Ltd",
+    "confidence": "low",
+    "target_classification": "aspiration_only",
+    "target_description": "Company has committed to a \"Roadmap towards Net Zero\" and is developing emissions reduction targets, but specific numerical targets, timelines, and scope coverage are not publicly disclosed in accessible sources. The company is engaged with Schneider Electric for SBTi development but targets do not appear to be SBTi-validated yet.",
+    "target_year": null,
+    "net_zero_year": null,
+    "target_scope": "Scope 1, 2, and 3 (company indicates tracking all scopes)",
+    "sbti_notes": "Company is in process of developing Science Based Targets Initiative (SBTi) standards with Schneider Electric. No evidence of SBTi-validated targets found in public sources as of June 2026.",
+    "sources": [
+      "https://sfihealth.com/wp-content/uploads/2024/07/SFI-Health-Sustainability-Report-2023.pdf",
+      "https://sfihealth.com/about-us/sustainability",
+      "https://sfihealth.com/news/sfi-health-receives-gri-recognition-for-first-sustainability-report",
+      "https://unglobalcompact.org/what-is-gc/participants/165063-Soho-Flordis-International-Pty-Limited"
+    ],
+    "notes": "Soho Flordis International (now operating as SFI Health as of 2021) has made a renewed public commitment toward contributing to the Paris Agreement. The company has established ESG roadmaps and is tracking CO2e emissions with baseline data established. However, specific numerical targets for emissions reduction by target year are not publicly accessible in web sources. The detailed information appears to be contained within their full 2023 Sustainability Report PDF, which was not readable via automated tools. Company is actively developing SBTi targets but these do not appear to be finalized or validated yet."
+  },
+  {
+    "company_name": "METRICS MASTER INCOME TRUST",
+    "confidence": "medium",
+    "target_year": 2030,
+    "net_zero_year": 2050,
+    "target_classification": "near_term_target",
+    "target_description": "Scope 1 and 2 emissions reduction of 50% by 2030 (from 2021 baseline). Portfolio temperature score alignment targets by 2027. Long-term net zero by 2050.",
+    "target_scope": "Scope 1, Scope 2, and Scope 3 (financed emissions). Covers both operational emissions and investment portfolio emissions.",
+    "sbti_notes": "Metrics Credit Partners (fund manager) is pursuing SBTi validation for revised targets. Committed to SBTi Financial Institutions Net-Zero Standard. First Australian/NZ entity to join PCAF. However, validation status is pending, not yet fully verified by SBTi.",
+    "notes": "METRICS MASTER INCOME TRUST (ASX:MXT) does not have its own published climate targets. The targets listed are from Metrics Credit Partners, the fund's investment manager, which applies these commitments across its managed assets including MXT. Targets include: 50% Scope 1&2 reduction by 2030, 100% renewable electricity by 2030, portfolio temperature alignment by 2027, and net zero by 2050. Fund is exposed to these commitments through its manager's ESG policy and NZAM signatory status. No dedicated sustainability report found for the trust itself.",
+    "sources": [
+      "https://www.metrics.com.au/esg-responsible-investing",
+      "https://www.metrics.com.au/insights/metrics-reaffirms-commitment-to-net-zero-asset-managers-initiative",
+      "https://metrics.com.au/news/metrics-joins-the-net-zero-asset-managers-initiative/",
+      "https://www.netzeroassetmanagers.org/",
+      "https://carbonaccountingfinancials.com/standard"
+    ]
+  },
+  {
+    "company_name": "AUSTRALIAN ETHICAL INVESTMENT LIMITED",
+    "confidence": "medium",
+    "net_zero_year": 2040,
+    "target_year": 2040,
+    "target_description": "Net zero emissions target for private sector investments by 2040; broader net zero target of 2050 for overall investments. Committed to set near-term reduction targets as part of Science Based Targets initiative.",
+    "target_scope": "Portfolio-level Scope 1 & 2 emissions measured at carbon intensity 75% lower than benchmark. Scope 3 (financed emissions) referenced but not formally targeted.",
+    "target_classification": "net_zero_committed",
+    "sbti_notes": "Company has committed to define trajectory for emissions reduction aligned with Paris Agreement to be verified by SBTi. Stuart Palmer from Australian Ethical Investment was listed as member of Expert Advisory Group for Financial Sector Science-Based Targets Guidance. However, no evidence of current validated SBTi target found in public sources.",
+    "notes": "Specific percentage reduction targets for near-term (pre-2040) are not publicly disclosed. Targets are portfolio-level metrics measuring investee company emissions intensity rather than company operational emissions. Base year for portfolio targets not explicitly stated. Target is intensity-based (tonnes CO2e per $M revenue), not absolute reduction. Additional 2050 net zero target confirmed for overall investment portfolio.",
+    "sources": [
+      "https://www.netzeroinvestor.net/news-and-views/briefs/australian-ethical-expands-private-markets-climate-solutions-portfolio",
+      "https://www.australianethical.com.au/shareholder/sustainability-insights/",
+      "https://www.australianethical.com.au/globalassets/pdf-files/sustainability-reports/2023/sustainability-report-2023.pdf",
+      "https://files.sciencebasedtargets.org/production/legacy/2020/10/Financial-Sector-Science-Based-Targets-Guidance-Pilot-Version.pdf",
+      "https://climateleague.org.au/organisation/australian-ethical/",
+      "https://www.australianethical.com.au/globalassets/pdf-files/annual-reports/2025-annual-report.pdf",
+      "https://www.australianethical.com.au/blog/backing-an-ambitious-climate-target/"
+    ]
+  },
+  {
+    "company_name": "Fitness Passport",
+    "confidence": "not_found",
+    "target_classification": "",
+    "target_year": null,
+    "target_description": "",
+    "target_scope": "",
+    "net_zero_year": null,
+    "sbti_notes": "No SBTi validation or commitment found. No climate targets identified.",
+    "notes": "Comprehensive research across Fitness Passport's official website (fitnesspassport.com.au), LinkedIn profile, company registration documents, and sustainability databases revealed no publicly stated climate targets, emissions reduction goals, net zero commitments, or sustainability reports. Fitness Passport is an Australian corporate fitness program (ABN 50 118 426 029) owned by EQT Partners, providing workplace health and wellness memberships. While the parent company EQT has published climate commitments, Fitness Passport itself has not disclosed any environmental or climate-related targets or initiatives.",
+    "sources": [
+      "https://www.fitnesspassport.com.au/",
+      "https://cloudflare.fitnesspassport.com.au/about/",
+      "https://au.linkedin.com/company/fitness-passport",
+      "https://abr.business.gov.au/ABN/View/50118426029",
+      "https://creditorwatch.com.au/credit/profile/50118426029",
+      "https://www.ausleisure.com.au/news/swedish-private-equity-group-to-purchase-fitness-passport-platform-for-750-million"
+    ]
+  }
+]

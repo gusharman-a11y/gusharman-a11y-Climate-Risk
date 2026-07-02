@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, ChevronDown, ChevronRight, ExternalLink, Pencil } from 'lucide-react'
-import type { Company, Signal } from '@/lib/types'
+import type { Company, Signal, SafeguardPosition } from '@/lib/types'
 import { asrsGroupBadge, relationshipBadge, PIPELINE_STAGE_LABELS } from '@/lib/types'
 import { Badge, ScorePill } from '@/components/Badge'
 import { updatePipelineStage, updateRelationship } from '@/lib/data'
@@ -11,12 +11,112 @@ import { updatePipelineStage, updateRelationship } from '@/lib/data'
 interface Props {
   company: Company
   signals: Signal[]
+  safeguard: SafeguardPosition | null
 }
 
 const SCORE_LABELS = ['ASRS Urgency', 'Target Gap', 'Risk Signals', 'Intent Signals', 'Relationship']
 const SCORE_KEYS = ['score_asrs', 'score_target_gap', 'score_risk', 'score_intent', 'score_relationship'] as const
 
-export default function CompanyProfileClient({ company: initial, signals }: Props) {
+function fmtTonnes(val: number | null): string {
+  if (val === null || val === undefined) return '—'
+  if (Math.abs(val) >= 1_000_000) return `${(val / 1_000_000).toFixed(1)}Mt`
+  return `${Math.round(val / 1_000)}k tCO₂e`
+}
+
+function fmtUnits(val: number | null): string {
+  if (val === null || val === undefined) return '—'
+  if (Math.abs(val) >= 1_000_000) return `${(val / 1_000_000).toFixed(1)}M`
+  return `${Math.round(val / 1_000)}k`
+}
+
+const METHOD_COLOURS: Record<string, { bg: string; text: string; label?: string }> = {
+  'Vegetation':              { bg: '#E2F4F5', text: '#276C75' },
+  'Waste':                   { bg: '#dff0f5', text: '#499BA6' },
+  'Savanna Fire Management': { bg: '#fde8d8', text: '#e86f2c', label: 'Savanna' },
+  'Industrial Fugitives':    { bg: '#dce8f5', text: '#0D4474' },
+  'Facilities':              { bg: '#cce5ff', text: '#00579B' },
+  'Energy Efficiency':       { bg: '#d4f4e2', text: '#00c875' },
+  'Agriculture':             { bg: '#eaf3d8', text: '#8bc34a' },
+  'Carbon Capture':          { bg: '#ede0f7', text: '#a25ddc' },
+  'Transport':               { bg: '#fff3cd', text: '#fdab3d' },
+}
+
+function SafeguardPanel({ safeguard }: { safeguard: SafeguardPosition }) {
+  const strategy = safeguard.compliance_strategy?.toLowerCase() ?? 'none'
+
+  const strategyBadge = strategy === 'accu'
+    ? { label: 'ACCU buyer', bg: 'bg-[#d4f4e2]', text: 'text-[#007038]' }
+    : strategy === 'mixed'
+    ? { label: 'ACCU + SMC', bg: 'bg-[#cce5ff]', text: 'text-[#0060c0]' }
+    : strategy === 'smc'
+    ? { label: 'SMC only — no ACCU procurement', bg: 'bg-[#ffe5b4]', text: 'text-[#c47c00]' }
+    : { label: 'No surrenders', bg: 'bg-[#f6f7fb]', text: 'text-[#676879]' }
+
+  const bdHint =
+    strategy === 'smc'
+      ? 'Complies via SMCs — no established ACCU procurement, greenfield opportunity for carbon strategy advisory.'
+      : (strategy === 'accu' || strategy === 'mixed') && (safeguard.accus_surrendered ?? 0) > 100_000
+      ? 'Material ACCU buyer — portfolio strategy and methodology mix are live conversations.'
+      : null
+
+  const stats = [
+    { label: 'Covered emissions', value: fmtTonnes(safeguard.safeguard_emissions) },
+    { label: 'Baseline', value: fmtTonnes(safeguard.safeguard_baseline) },
+    { label: 'ACCUs surrendered', value: fmtUnits(safeguard.accus_surrendered) },
+    { label: 'SMCs surrendered', value: fmtUnits(safeguard.smcs_surrendered) },
+  ]
+
+  const methodEntries = safeguard.surrendered_by_method
+    ? Object.entries(safeguard.surrendered_by_method).sort((a, b) => b[1] - a[1])
+    : null
+
+  return (
+    <div className="bg-white border border-[#e6e9ef] rounded-lg p-5">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-sm font-semibold text-[#323338]">Safeguard Position 2024-25</h2>
+        <span className={`text-xs font-semibold px-2 py-0.5 rounded ${strategyBadge.bg} ${strategyBadge.text}`}>
+          {strategyBadge.label}
+        </span>
+      </div>
+
+      {/* 4-stat row */}
+      <div className="grid grid-cols-4 gap-3 mb-4">
+        {stats.map(s => (
+          <div key={s.label} className="flex flex-col gap-0.5">
+            <span className="text-[11px] text-[#676879] uppercase tracking-wide font-semibold">{s.label}</span>
+            <span className="text-sm font-bold text-[#323338] tabular-nums">{s.value}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Method pills */}
+      {methodEntries && methodEntries.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {methodEntries.map(([method, vol]) => {
+            const c = METHOD_COLOURS[method] ?? { bg: '#f6f7fb', text: '#676879' }
+            const label = (METHOD_COLOURS[method]?.label ?? method)
+            return (
+              <span
+                key={method}
+                className="inline-flex items-center gap-1 text-[11px] font-semibold rounded px-2 py-0.5"
+                style={{ background: c.bg, color: c.text }}
+              >
+                {label} <span className="font-normal opacity-75">{fmtUnits(vol)}</span>
+              </span>
+            )
+          })}
+        </div>
+      )}
+
+      {/* BD hint */}
+      {bdHint && (
+        <p className="text-xs text-[#676879] mt-1">{bdHint}</p>
+      )}
+    </div>
+  )
+}
+
+export default function CompanyProfileClient({ company: initial, signals, safeguard }: Props) {
   const [company, setCompany] = useState(initial)
   const [relExpanded, setRelExpanded] = useState(false)
   const [editingRel, setEditingRel] = useState(false)
@@ -117,6 +217,9 @@ export default function CompanyProfileClient({ company: initial, signals }: Prop
               </div>
             )}
           </div>
+
+          {/* Safeguard Position */}
+          {safeguard && <SafeguardPanel safeguard={safeguard} />}
 
           {/* Company data */}
           <div className="bg-white border border-[#e6e9ef] rounded-lg p-5">

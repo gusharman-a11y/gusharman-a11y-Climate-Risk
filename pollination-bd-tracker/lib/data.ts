@@ -1,36 +1,19 @@
 import { supabase } from './supabase'
 import type { Company, Signal } from './types'
 
-const HOT_SHEET_COLS = 'id,name,asx_code,sector,asrs_group,score_overall,score_asrs,score_target_gap,score_risk,score_intent,score_relationship,top_signal,relationship_status,relationship_lead,pipeline_stage,mandatory_from,sbti_status,sbti_date_updated,carbon_market_research,news_6m_summary'
+const HOT_SHEET_COLS = 'id,name,asx_code,sector,asrs_group,score_overall,score_asrs,score_target_gap,score_risk,score_intent,score_relationship,top_signal,relationship_status,relationship_lead,pipeline_stage,mandatory_from,sbti_status,sbti_date_updated,carbon_market_research,news_6m_summary,next_trigger_date,trigger_type'
 
 // ── Hot Sheet ─────────────────────────────────────────────────────────────────
 
-export async function getHotSheet(): Promise<{ main: Company[]; sbtiV2: Company[] }> {
-  const [mainRes, sbtiRes] = await Promise.all([
-    // Hot sheet — only the 10 flagged companies
-    supabase
-      .from('companies')
-      .select(HOT_SHEET_COLS)
-      .eq('hot_sheet', true)
-      .order('score_overall', { ascending: false }),
+export async function getHotSheet(): Promise<Company[]> {
+  const { data, error } = await supabase
+    .from('companies')
+    .select(HOT_SHEET_COLS)
+    .eq('hot_sheet', true)
+    .order('score_overall', { ascending: false })
 
-    // SBTi V2 refresh group — validated companies sorted oldest-validated first
-    supabase
-      .from('companies')
-      .select(HOT_SHEET_COLS + ',sbti_target_text')
-      .eq('sbti_status', 'Targets set')
-      .eq('hot_sheet', true)
-      .order('sbti_date_updated', { ascending: true })
-      .limit(150),
-  ])
-
-  if (mainRes.error) throw mainRes.error
-  if (sbtiRes.error) throw sbtiRes.error
-
-  return {
-    main: (mainRes.data ?? []) as unknown as Company[],
-    sbtiV2: (sbtiRes.data ?? []) as unknown as Company[],
-  }
+  if (error) throw error
+  return (data ?? []) as unknown as Company[]
 }
 
 // ── Full universe with filters ─────────────────────────────────────────────
@@ -121,6 +104,21 @@ export async function updateRelationship(
   const { error } = await supabase
     .from('companies')
     .update({ ...patch, updated_at: new Date().toISOString() })
+    .eq('id', companyId)
+
+  if (error) throw error
+}
+
+// ── Update trigger ─────────────────────────────────────────────────────────
+
+export async function updateTrigger(
+  companyId: string,
+  date: string | null,
+  type: string | null,
+): Promise<void> {
+  const { error } = await supabase
+    .from('companies')
+    .update({ next_trigger_date: date, trigger_type: type, updated_at: new Date().toISOString() })
     .eq('id', companyId)
 
   if (error) throw error

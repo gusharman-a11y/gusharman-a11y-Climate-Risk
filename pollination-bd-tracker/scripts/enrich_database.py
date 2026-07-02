@@ -248,9 +248,11 @@ def build_top_signal(stg, sr, sa, srel, sbti_s, tc, safeguard, scope1, delivery_
     elif delivery_boost >= 1:
         candidates.append((4, "Behind on SBTi delivery trajectory"))
     if stg >= 4.5:
-        candidates.append((4, f"No public climate target — ASRS mandatory disclosure required"))
+        candidates.append((4, "No public climate target — ASRS mandatory disclosure required"))
     elif stg >= 3.5:
         candidates.append((3.5, f"Weak target ({tc}) — credibility gap under ASRS scrutiny"))
+    elif stg >= 2.5:
+        candidates.append((2.5, f"Has target but not SBTi-validated — disclosure credibility risk"))
     if safeguard:
         candidates.append((3, "Safeguard Mechanism covered — legal reduction obligation"))
     if sa >= 5:
