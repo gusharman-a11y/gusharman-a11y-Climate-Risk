@@ -124,7 +124,7 @@ export default function HomePage() {
           className="text-[#1a1a1a] font-light tracking-[0.28em] uppercase select-none"
           style={{ fontSize: 14 }}
         >
-          pollination
+          carbon intelligence
         </span>
       </div>
 

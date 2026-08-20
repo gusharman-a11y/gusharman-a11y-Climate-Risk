@@ -342,7 +342,7 @@ export default function CompanyProfileClient({ company: initial, signals, safegu
                       <option value="past_client">Past client</option>
                       <option value="current_client">Current client</option>
                     </select>
-                    <input placeholder="Pollination lead" value={relDraft.relationship_lead}
+                    <input placeholder="Relationship lead" value={relDraft.relationship_lead}
                       onChange={e => setRelDraft(p => ({ ...p, relationship_lead: e.target.value }))}
                       className="w-full text-sm border border-[#e6e9ef] rounded px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#0073ea]" />
                     <input placeholder="Contact names/titles" value={relDraft.relationship_contacts}

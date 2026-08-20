@@ -23,7 +23,7 @@ export default function TopNav() {
           <div className="w-2.5 h-2.5 rounded-full bg-[#B1DEE5]" />
         </div>
         <span className="font-bold text-[#323338] text-sm hidden sm:block group-hover:text-[#10545D] transition-colors">
-          Pollination <span className="font-normal text-[#676879]">BD</span>
+          Carbon <span className="font-normal text-[#676879]">BD</span>
         </span>
       </Link>
 

@@ -142,7 +142,7 @@ export default function MarketIntelClient({
       <div className="bg-[#10545D] px-6 py-8">
         <div className="max-w-6xl mx-auto">
           <p className="text-[#B1DEE5] text-xs font-bold uppercase tracking-widest mb-2">
-            Pollination · AUS Market Intelligence
+            AUS Market Intelligence
           </p>
           <h1 className="text-2xl font-bold text-white mb-1">
             Australian ACCU Market — Safeguard Surrenders
