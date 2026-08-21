@@ -1,4 +1,4 @@
--- Pollination BD Tracker — Supabase Schema
+-- BD Tracker — Supabase Schema
 -- Run this in the Supabase SQL editor to initialise the database.
 
 create extension if not exists "uuid-ossp";
